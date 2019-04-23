@@ -7,17 +7,23 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.VBox;
 
 public class Homepage implements Page{
-    private VBox homeBox;
+    private Node pageContent;
+    private String pageTitle;
 
     Homepage() {
-        homeBox = buildHomepage();
+        pageContent = buildHomepage();
+        pageTitle = "Pocono Mountain Public Library";
     }
 
     public Node getContent() {
-        return homeBox;
+        return pageContent;
     }
 
-    private static VBox buildHomepage() {
+    public String getTitle() {
+        return pageTitle;
+    }
+
+    private static Node buildHomepage() {
         Image pmImg = new Image("file:resources/images/MP_overlook.jpg");
         ImageView pm = new ImageView(pmImg);
 

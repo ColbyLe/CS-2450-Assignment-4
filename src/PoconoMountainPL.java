@@ -1,5 +1,6 @@
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
+import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.Hyperlink;
 import javafx.scene.control.ScrollPane;
@@ -16,6 +17,7 @@ import javafx.application.Application;
 public class PoconoMountainPL extends Application {
     private Scene primaryScene;
     private TextField searchBar;
+    private Node pageContent;
 
     public static void main(String[] args) {
         launch(args);
@@ -24,8 +26,8 @@ public class PoconoMountainPL extends Application {
     public void start(Stage primaryStage) {
         Homepage home = new Homepage();
         showPage(home, primaryStage);
+        // display stage
         primaryStage.show();
-        primaryStage.setTitle("Pocono Mountain Public Library");
     }
 
     private VBox getTopNav(Stage primaryStage) {
@@ -95,15 +97,14 @@ public class PoconoMountainPL extends Application {
     }
 
     private HBox getBottomNav(Stage primaryStage) {
-        Hyperlink[] navLink = new Hyperlink[3];
+        Hyperlink[] navLink = new Hyperlink[2];
         navLink[0] = new Hyperlink("Contact Us");
-        navLink[1] = new Hyperlink("Site Map");
-        navLink[2] = new Hyperlink("Privacy Policy");
+        navLink[1] = new Hyperlink("Privacy Policy");
         for(Hyperlink x:navLink) {
             x.setStyle("-fx-text-fill: black");
         }
 
-        HBox botNav = new HBox(navLink[0], navLink[1], navLink[2]);
+        HBox botNav = new HBox(navLink[0], navLink[1]);
         botNav.setPrefHeight(64);
         botNav.setPadding(new Insets(8,8,8,8));
         botNav.setAlignment(Pos.CENTER_RIGHT);
@@ -112,9 +113,16 @@ public class PoconoMountainPL extends Application {
     }
 
     private void showPage(Page p, Stage primaryStage) {
-        VBox pageBox = new VBox(getTopNav(primaryStage), p.getContent(), getBottomNav(primaryStage));
+        // get page content, then place in VBox between top nav bar and bottom nav bar
+        pageContent = p.getContent();
+        VBox pageBox = new VBox(getTopNav(primaryStage), pageContent, getBottomNav(primaryStage));
+
+        // add pageBox to ScrollPane
         ScrollPane pagePane = new ScrollPane(pageBox);
         pagePane.setPrefViewportHeight(768);
+        pagePane.setPrefViewportWidth(1024);
+
+        // set primary scene and add stylesheet
         primaryScene = new Scene(pagePane);
         primaryScene.getStylesheets().add("main.css");
 
@@ -125,6 +133,8 @@ public class PoconoMountainPL extends Application {
             }
         });
 
+        // set primary stage
         primaryStage.setScene(primaryScene);
+        primaryStage.setTitle(p.getTitle());
     }
 }
