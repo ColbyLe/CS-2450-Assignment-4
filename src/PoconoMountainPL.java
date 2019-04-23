@@ -7,6 +7,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.Scene;
+import javafx.scene.input.KeyCode;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
@@ -14,6 +15,7 @@ import javafx.application.Application;
 
 public class PoconoMountainPL extends Application {
     private Scene primaryScene;
+    private TextField searchBar;
 
     public static void main(String[] args) {
         launch(args);
@@ -24,17 +26,6 @@ public class PoconoMountainPL extends Application {
         showPage(home, primaryStage);
         primaryStage.show();
         primaryStage.setTitle("Pocono Mountain Public Library");
-        /*
-        VBox homeBox = new VBox(getTopNav(primaryStage), home.getContent(), getBottomNav(primaryStage));
-
-        ScrollPane homePane = new ScrollPane(homeBox);
-        homePane.setPrefViewportHeight(768);
-
-        primaryScene = new Scene(homePane);
-        primaryScene.getStylesheets().add("main.css");
-        primaryStage.setScene(primaryScene);
-        primaryStage.show();
-        */
     }
 
     private VBox getTopNav(Stage primaryStage) {
@@ -43,22 +34,7 @@ public class PoconoMountainPL extends Application {
         banner.setOnMouseClicked(e-> {
             showPage(new Homepage(), primaryStage);
         });
-        /*
-        Button[] loginB = new Button[2];
-        loginB[0] = new Button("Log In");
-        loginB[1] = new Button("Sign Up");
 
-        for(Button x:loginB) {
-            x.setPrefWidth(144);
-            x.setPrefHeight(32);
-            x.setAlignment(Pos.CENTER);
-        }
-        HBox buttonBar = new HBox(loginB[0], loginB[1]);
-        buttonBar.setSpacing(32);
-        buttonBar.setPadding(new Insets(32,32,0,32));
-        buttonBar.setPrefWidth(384);
-        buttonBar.setAlignment(Pos.BASELINE_CENTER);
-        */
         HBox bannerBar = new HBox(banner);
 
         Button[] navB = new Button[4];
@@ -87,7 +63,8 @@ public class PoconoMountainPL extends Application {
 
         });
 
-        TextField searchBar = new TextField("Find books and more");
+        searchBar = new TextField("Find books and more");
+
         for(Button x:navB) {
             x.setOnMouseEntered(e -> {
                 x.setStyle("-fx-background-color: rgb(0,131,131)");
@@ -98,12 +75,15 @@ public class PoconoMountainPL extends Application {
             });
         }
 
-
         for(Button x:navB){
             x.setPrefWidth(160);
             x.setPrefHeight(46);
             x.setAlignment(Pos.CENTER);
         }
+
+        searchBar.setOnMouseClicked(e-> {
+            searchBar.setText("");
+        });
 
         searchBar.setPrefWidth(384);
         searchBar.setPrefHeight(46);
@@ -137,6 +117,14 @@ public class PoconoMountainPL extends Application {
         pagePane.setPrefViewportHeight(768);
         primaryScene = new Scene(pagePane);
         primaryScene.getStylesheets().add("main.css");
+
+        // set functionality for search bar
+        primaryScene.setOnKeyPressed(e-> {
+            if(e.getCode() == KeyCode.ENTER) {
+                showPage(new SearchPage(searchBar.getText()), primaryStage);
+            }
+        });
+
         primaryStage.setScene(primaryScene);
     }
 }
