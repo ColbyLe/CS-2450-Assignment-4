@@ -28,7 +28,7 @@ public class PoconoMountainPL extends Application {
     }
 
     private VBox getTopNav() {
-        Image bannerImg = new Image("file:banner.png");
+        Image bannerImg = new Image("file:resources/images/banner.png");
         ImageView banner = new ImageView(bannerImg);
         Button[] loginB = new Button[2];
         loginB[0] = new Button("Log In");
@@ -83,7 +83,7 @@ public class PoconoMountainPL extends Application {
     }
 
     private VBox getHomepage() {
-        Image pmImg = new Image("file:MP_overlook.jpg");
+        Image pmImg = new Image("file:resources/images/MP_overlook.jpg");
         ImageView pm = new ImageView(pmImg);
 
         Label newsLabel = new Label("What's New at PMPL");
