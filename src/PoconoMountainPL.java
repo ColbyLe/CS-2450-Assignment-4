@@ -13,7 +13,7 @@ import javafx.stage.Stage;
 import javafx.application.Application;
 
 public class PoconoMountainPL extends Application {
-    Scene primaryScene;
+    private Scene primaryScene;
 
     public static void main(String[] args) {
         launch(args);
@@ -91,11 +91,15 @@ public class PoconoMountainPL extends Application {
         navLink[0] = new Hyperlink("Contact Us");
         navLink[1] = new Hyperlink("Site Map");
         navLink[2] = new Hyperlink("Privacy Policy");
+        for(Hyperlink x:navLink) {
+            x.setStyle("-fx-text-fill: black");
+        }
 
         HBox botNav = new HBox(navLink[0], navLink[1], navLink[2]);
         botNav.setPrefHeight(64);
         botNav.setPadding(new Insets(8,8,8,8));
         botNav.setAlignment(Pos.CENTER_RIGHT);
+        botNav.setStyle("-fx-background-color: rgb(0,121,121);");
         return botNav;
     }
 }
