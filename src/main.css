@@ -1,10 +1,10 @@
 @font-face {
-    font-family: Open-Sans;
-    src: url('Fonts/OpenSans-Regular.ttf');
+    font-family: Poppins-Light;
+    src: url('Fonts/Poppins-Light.ttf');
 }
 
 .button {
-    -fx-font-family: Poppins;
+    -fx-font-family: Poppins-Light;
     -fx-font-size: 16px;
     -fx-background-color: rgb(0,121,121);
     -fx-background-radius: 0px;

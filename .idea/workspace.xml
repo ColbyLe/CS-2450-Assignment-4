@@ -2,14 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="94c2ba7d-14a2-409d-938f-3bbefb366531" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/stylesheets/main.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Homepage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Poppins-Regular.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/fonts/Poppins-SemiBold.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/src/Poppins-SemiBold.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/images/banner.png" beforeDir="false" afterPath="$PROJECT_DIR$/resources/images/banner.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/PoconoMountainPL.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PoconoMountainPL.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -48,17 +41,17 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="19" column="1" lean-forward="true" selection-start-line="19" selection-start-column="1" selection-end-line="19" selection-end-column="1" />
+            <state relative-caret-position="272">
+              <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/resources/fonts/OpenSans-Regular.ttf">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Fonts/OpenSans-Regular.ttf">
           <provider selected="true" editor-type-id="fontseditor" />
         </entry>
       </file>
@@ -131,6 +124,12 @@
               <item name="CS2450-Assignment4" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="CS2450-Assignment4" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CS2450-Assignment4" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Fonts" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -140,7 +139,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1556000954635" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1556001161511" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -153,6 +152,7 @@
       <recent name="D:\Users\Colby\IdeaProjects\CS2450-Assignment4\resources\fonts" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Users\Colby\IdeaProjects\CS2450-Assignment4\src\Fonts" />
       <recent name="D:\Users\Colby\IdeaProjects\CS2450-Assignment4\src" />
       <recent name="D:\Users\Colby\IdeaProjects\CS2450-Assignment4\resources\images" />
       <recent name="D:\Users\Colby\IdeaProjects\CS2450-Assignment4\resources\fonts" />
@@ -190,7 +190,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1555989494160</updated>
-      <workItem from="1555989495886" duration="10095000" />
+      <workItem from="1555989495886" duration="10341000" />
     </task>
     <task id="LOCAL-00001" summary="Started home page">
       <created>1555995563014</created>
@@ -213,14 +213,22 @@
       <option name="project" value="LOCAL" />
       <updated>1555996387403</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="- moved images into resources directory&#10;- added fonts">
+      <created>1556000988560</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1556000988560</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="10095000" />
+    <option name="totallyTimeSpent" value="10341000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1170" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Image Layers" />
       <window_info id="Designer" />
@@ -275,6 +283,12 @@
     <entry file="file://$PROJECT_DIR$/src/Poppins-SemiBold.ttf">
       <provider selected="true" editor-type-id="fontseditor" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/resources/fonts/OpenSans-Italic.ttf">
+      <provider selected="true" editor-type-id="fontseditor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Fonts/OpenSans-Regular.ttf">
+      <provider selected="true" editor-type-id="fontseditor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Homepage.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="245">
@@ -288,16 +302,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="1" lean-forward="true" selection-start-line="19" selection-start-column="1" selection-end-line="19" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/fonts/OpenSans-Italic.ttf">
-      <provider selected="true" editor-type-id="fontseditor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/PoconoMountainPL.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
@@ -309,8 +313,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/fonts/OpenSans-Regular.ttf">
-      <provider selected="true" editor-type-id="fontseditor" />
+    <entry file="file://$PROJECT_DIR$/src/main.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
+        </state>
+      </provider>
     </entry>
   </component>
   <component name="masterDetails">
