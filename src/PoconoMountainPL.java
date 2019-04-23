@@ -21,8 +21,11 @@ public class PoconoMountainPL extends Application {
 
     public void start(Stage primaryStage) {
         Homepage home = new Homepage();
-
-        VBox homeBox = new VBox(getTopNav(), home.getContent(), getBottomNav());
+        showPage(home, primaryStage);
+        primaryStage.show();
+        primaryStage.setTitle("Pocono Mountain Public Library");
+        /*
+        VBox homeBox = new VBox(getTopNav(primaryStage), home.getContent(), getBottomNav(primaryStage));
 
         ScrollPane homePane = new ScrollPane(homeBox);
         homePane.setPrefViewportHeight(768);
@@ -31,9 +34,10 @@ public class PoconoMountainPL extends Application {
         primaryScene.getStylesheets().add("main.css");
         primaryStage.setScene(primaryScene);
         primaryStage.show();
+        */
     }
 
-    private static VBox getTopNav() {
+    private VBox getTopNav(Stage primaryStage) {
         Image bannerImg = new Image("file:resources/images/banner.png");
         ImageView banner = new ImageView(bannerImg);
         /*
@@ -56,9 +60,24 @@ public class PoconoMountainPL extends Application {
 
         Button[] navB = new Button[4];
         navB[0] = new Button("Home");
+        navB[0].setOnAction(e-> {
+            showPage(new Homepage(), primaryStage);
+        });
+
         navB[1] = new Button("Discover");
+        navB[1].setOnAction(e-> {
+            VBox blank1 = new VBox();
+            VBox pageBox = new VBox(getTopNav(primaryStage), blank1, getBottomNav(primaryStage));
+            primaryScene = new Scene(pageBox);
+            primaryStage.setScene(primaryScene);
+        });
+
         navB[2] = new Button("Events");
+
+
         navB[3] = new Button("About");
+
+
         TextField searchBar = new TextField("Find books and more");
         for(Button x:navB) {
             x.setOnMouseEntered(e -> {
@@ -86,7 +105,7 @@ public class PoconoMountainPL extends Application {
         return topNav;
     }
 
-    private static HBox getBottomNav() {
+    private HBox getBottomNav(Stage primaryStage) {
         Hyperlink[] navLink = new Hyperlink[3];
         navLink[0] = new Hyperlink("Contact Us");
         navLink[1] = new Hyperlink("Site Map");
@@ -101,5 +120,14 @@ public class PoconoMountainPL extends Application {
         botNav.setAlignment(Pos.CENTER_RIGHT);
         botNav.setStyle("-fx-background-color: rgb(0,121,121);");
         return botNav;
+    }
+
+    private void showPage(Page p, Stage primaryStage) {
+        VBox pageBox = new VBox(getTopNav(primaryStage), p.getContent(), getBottomNav(primaryStage));
+        ScrollPane pagePane = new ScrollPane(pageBox);
+        pagePane.setPrefViewportHeight(768);
+        primaryScene = new Scene(pagePane);
+        primaryScene.getStylesheets().add("main.css");
+        primaryStage.setScene(primaryScene);
     }
 }

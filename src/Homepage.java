@@ -10,8 +10,8 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 
-public class Homepage {
-    VBox homeBox;
+public class Homepage implements Page{
+    private VBox homeBox;
 
     Homepage() {
         homeBox = getHomepage();
@@ -19,7 +19,7 @@ public class Homepage {
 
     public VBox getContent() {
         return homeBox;
-    };
+    }
 
     private static VBox getHomepage() {
         Image pmImg = new Image("file:resources/images/MP_overlook.jpg");
@@ -71,12 +71,11 @@ public class Homepage {
                 "Phone: (570) 894-8860 \n" +
                 "Fax: (570) 894-8852");
         info.setPrefWidth(976);
-        VBox justInfo = new VBox(info);
-        justInfo.setAlignment(Pos.CENTER);
-        justInfo.setPadding(new Insets(24,24,32,24));
-        justInfo.setSpacing(8);
+        VBox infoBox = new VBox(info);
+        infoBox.setAlignment(Pos.CENTER);
+        infoBox.setPadding(new Insets(24,24,32,24));
+        infoBox.setSpacing(8);
 
-        VBox homepage = new VBox(pm, newsBox, justInfo);
-        return homepage;
+        return new VBox(pm, newsBox, infoBox);
     }
 }
