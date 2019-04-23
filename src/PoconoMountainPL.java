@@ -1,6 +1,5 @@
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
-import javafx.scene.Node;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -78,6 +77,7 @@ public class PoconoMountainPL extends Application {
 
         HBox botNav = new HBox(navLink[0], navLink[1], navLink[2]);
         botNav.setPrefHeight(64);
+        botNav.setPadding(new Insets(8,8,8,8));
         botNav.setAlignment(Pos.CENTER_RIGHT);
         return botNav;
     }
