@@ -40,6 +40,9 @@ public class PoconoMountainPL extends Application {
     private VBox getTopNav(Stage primaryStage) {
         Image bannerImg = new Image("file:resources/images/banner.png");
         ImageView banner = new ImageView(bannerImg);
+        banner.setOnMouseClicked(e-> {
+            showPage(new Homepage(), primaryStage);
+        });
         /*
         Button[] loginB = new Button[2];
         loginB[0] = new Button("Log In");
@@ -65,6 +68,7 @@ public class PoconoMountainPL extends Application {
         });
 
         navB[1] = new Button("Discover");
+        // dummy event handler
         navB[1].setOnAction(e-> {
             VBox blank1 = new VBox();
             VBox pageBox = new VBox(getTopNav(primaryStage), blank1, getBottomNav(primaryStage));
@@ -73,10 +77,15 @@ public class PoconoMountainPL extends Application {
         });
 
         navB[2] = new Button("Events");
+        navB[2].setOnAction(e-> {
+
+        });
 
 
         navB[3] = new Button("About");
+        navB[3].setOnAction(e-> {
 
+        });
 
         TextField searchBar = new TextField("Find books and more");
         for(Button x:navB) {
