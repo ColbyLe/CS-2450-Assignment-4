@@ -1,5 +1,6 @@
+import javafx.scene.Node;
 import javafx.scene.layout.VBox;
 
 public interface Page {
-    abstract VBox getContent();
+    abstract Node getContent();
 }

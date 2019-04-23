@@ -1,5 +1,6 @@
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
+import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.Hyperlink;
 import javafx.scene.control.ScrollPane;
@@ -17,7 +18,7 @@ public class Homepage implements Page{
         homeBox = getHomepage();
     }
 
-    public VBox getContent() {
+    public Node getContent() {
         return homeBox;
     }
 
