@@ -53,7 +53,7 @@ public class Homepage implements Page{
         VBox newsBox = new VBox(newsLabel, newsTitles[0], newsInfo[0], newsTitles[1], newsInfo[1], newsTitles[2], newsInfo[2], newsTitles[3], newsInfo[3]);
         newsBox.setPadding(new Insets(32,24,32,24));
         newsBox.setSpacing(8);
-
+        /*
         Label info = new Label("PMPL HOURS OF OPERATION:\n" +
                 "Monday 10:00 am - 6:00 pm \n" +
                 "Tuesday 10:00 am - 5:00 pm \n" +
@@ -76,7 +76,7 @@ public class Homepage implements Page{
         infoBox.setAlignment(Pos.CENTER);
         infoBox.setPadding(new Insets(24,24,32,24));
         infoBox.setSpacing(8);
-
-        return new VBox(pm, newsBox, infoBox);
+        */
+        return new VBox(pm, newsBox);
     }
 }
