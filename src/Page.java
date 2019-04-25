@@ -8,6 +8,5 @@ public interface Page {
     // getTitle returns the page title
     abstract String getTitle();
 
-    // setSearchString is used to pass a search query to the active page
-    abstract void setSearchString(String s);
+    abstract Page getChildPage();
 }

@@ -15,6 +15,12 @@ public class ListingPage implements Page {
     public String getTitle() {
         return pageTitle;
     }
+
+    public Page getChildPage() {
+        return this;
+    }
+
+
     public void setSearchString(String s) {
         searchString = s;
     }

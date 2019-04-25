@@ -98,6 +98,10 @@ public class SearchPage implements Page {
         return pageContent;
     }
 
+    public Page getChildPage() {
+        return new ListingPage();
+    }
+
     public String getTitle() {
         return pageTitle;
     }

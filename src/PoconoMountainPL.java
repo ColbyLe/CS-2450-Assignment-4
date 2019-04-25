@@ -119,11 +119,14 @@ public class PoconoMountainPL extends Application {
 
     private void showPage(Page p, Stage primaryStage) {
         // get page content, then place in VBox between top nav bar and bottom nav bar
-        activePage = p;
 
         // on search, pass text of searchBar to activePage
 
         pageContent = p.getContent();
+        pageContent.setOnMouseClicked(e-> {
+            showPage(p.getChildPage(), primaryStage);
+        });
+
         VBox pageBox = new VBox(getTopNav(primaryStage), pageContent, getBottomNav(primaryStage));
 
         System.out.println(p.getClass());
@@ -140,7 +143,10 @@ public class PoconoMountainPL extends Application {
         // set functionality for search bar
         primaryScene.setOnKeyPressed(e-> {
             if(e.getCode() == KeyCode.ENTER) {
-                showPage(new SearchPage(searchBar.getText(), primaryStage, getTopNav(primaryStage), getBottomNav(primaryStage)), primaryStage);
+                if(!(searchBar.getText().equals(""))) {
+                    System.out.println(searchBar.getText());
+                    showPage(new SearchPage(searchBar.getText(), primaryStage, getTopNav(primaryStage), getBottomNav(primaryStage)), primaryStage);
+                }
             }
         });
 

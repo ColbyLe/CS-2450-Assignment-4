@@ -23,6 +23,11 @@ public class HomePage implements Page{
         return pageTitle;
     }
 
+    @Override
+    public Page getChildPage() {
+        return this;
+    }
+
     public void setSearchString(String s) {
         searchString = s;
     }
