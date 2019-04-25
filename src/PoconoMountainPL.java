@@ -119,6 +119,10 @@ public class PoconoMountainPL extends Application {
 
     private void showPage(Page p, Stage primaryStage) {
         // get page content, then place in VBox between top nav bar and bottom nav bar
+        activePage = p;
+
+        // on search, pass text of searchBar to activePage
+
         pageContent = p.getContent();
         VBox pageBox = new VBox(getTopNav(primaryStage), pageContent, getBottomNav(primaryStage));
 

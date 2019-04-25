@@ -3,7 +3,7 @@ import javafx.scene.layout.VBox;
 
 public class ListingPage implements Page {
     private Node pageContent;
-    private String pageTitle;
+    private String pageTitle, searchString;
 
     public ListingPage() {
         pageTitle = "This is a Book";
@@ -14,5 +14,8 @@ public class ListingPage implements Page {
     }
     public String getTitle() {
         return pageTitle;
+    }
+    public void setSearchString(String s) {
+        searchString = s;
     }
 }
