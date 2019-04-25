@@ -6,11 +6,11 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.VBox;
 
-public class Homepage implements Page{
+public class HomePage implements Page{
     private Node pageContent;
-    private String pageTitle;
+    private String pageTitle, searchString;
 
-    Homepage() {
+    HomePage() {
         pageContent = buildHomepage();
         pageTitle = "Pocono Mountain Public Library";
     }
@@ -21,6 +21,10 @@ public class Homepage implements Page{
 
     public String getTitle() {
         return pageTitle;
+    }
+
+    public void setSearchString(String s) {
+        searchString = s;
     }
 
     private static Node buildHomepage() {

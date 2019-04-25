@@ -18,13 +18,14 @@ public class PoconoMountainPL extends Application {
     private Scene primaryScene;
     private TextField searchBar;
     private Node pageContent;
+    private Page activePage;
 
     public static void main(String[] args) {
         launch(args);
     }
 
     public void start(Stage primaryStage) {
-        Homepage home = new Homepage();
+        HomePage home = new HomePage();
         showPage(home, primaryStage);
         // display stage
         primaryStage.show();
@@ -34,15 +35,26 @@ public class PoconoMountainPL extends Application {
         Image bannerImg = new Image("file:resources/images/banner.png");
         ImageView banner = new ImageView(bannerImg);
         banner.setOnMouseClicked(e-> {
-            showPage(new Homepage(), primaryStage);
+            showPage(new HomePage(), primaryStage);
         });
+
+        searchBar = new TextField("Find books and more");
+
+        searchBar.setOnMouseClicked(e-> {
+            searchBar.setText("");
+        });
+
+        searchBar.setPrefWidth(384);
+        searchBar.setPrefHeight(46);
 
         HBox bannerBar = new HBox(banner);
 
         Button[] navB = new Button[4];
         navB[0] = new Button("Home");
+
+        // Button actions should call showPage, passing a new instance of the appropriate Page class and the primary stage
         navB[0].setOnAction(e-> {
-            showPage(new Homepage(), primaryStage);
+            showPage(new HomePage(), primaryStage);
         });
 
         navB[1] = new Button("Discover");
@@ -65,8 +77,6 @@ public class PoconoMountainPL extends Application {
 
         });
 
-        searchBar = new TextField("Find books and more");
-
         for(Button x:navB) {
             x.setOnMouseEntered(e -> {
                 x.setStyle("-fx-background-color: rgb(0,131,131)");
@@ -83,12 +93,7 @@ public class PoconoMountainPL extends Application {
             x.setAlignment(Pos.CENTER);
         }
 
-        searchBar.setOnMouseClicked(e-> {
-            searchBar.setText("");
-        });
 
-        searchBar.setPrefWidth(384);
-        searchBar.setPrefHeight(46);
         HBox navBar = new HBox(navB[0], navB[1], navB[2], navB[3], searchBar);
 
         VBox topNav = new VBox(bannerBar, navBar);
@@ -117,6 +122,8 @@ public class PoconoMountainPL extends Application {
         pageContent = p.getContent();
         VBox pageBox = new VBox(getTopNav(primaryStage), pageContent, getBottomNav(primaryStage));
 
+        System.out.println(p.getClass());
+
         // add pageBox to ScrollPane
         ScrollPane pagePane = new ScrollPane(pageBox);
         pagePane.setPrefViewportHeight(768);
@@ -129,12 +136,13 @@ public class PoconoMountainPL extends Application {
         // set functionality for search bar
         primaryScene.setOnKeyPressed(e-> {
             if(e.getCode() == KeyCode.ENTER) {
-                showPage(new SearchPage(searchBar.getText()), primaryStage);
+                showPage(new SearchPage(searchBar.getText(), primaryStage, getTopNav(primaryStage), getBottomNav(primaryStage)), primaryStage);
             }
         });
 
         // set primary stage
         primaryStage.setScene(primaryScene);
+        primaryStage.setMaxWidth(1055);
         primaryStage.setTitle(p.getTitle());
     }
 }
