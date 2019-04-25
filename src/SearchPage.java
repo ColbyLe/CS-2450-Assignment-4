@@ -82,7 +82,7 @@ public class SearchPage implements Page {
     }
 
     private Scene buildListingScene(Stage pStage, Node topNav, Node bottomNav) {
-        ListingPage lp = new ListingPage();
+        ListingPage lp = new ListingPage(new ItemListing("Book"));
         VBox content = new VBox(topNav, lp.getContent(), bottomNav);
         Scene s1 = new Scene(content);
         s1.getStylesheets().add("main.css");
@@ -99,7 +99,7 @@ public class SearchPage implements Page {
     }
 
     public Page getChildPage() {
-        return new ListingPage();
+        return new ListingPage(new ItemListing("Book"));
     }
 
     public String getTitle() {
