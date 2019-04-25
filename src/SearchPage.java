@@ -51,9 +51,11 @@ public class SearchPage implements Page {
             resultBox[i] = new VBox(resultTitles[i], resultType[i], resultInfo[i], resultSummary[i]);
             resultBox[i].setPadding(new Insets(8,8,8,8));
             resultBox[i].setStyle("-fx-background-color: white; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.12), 3, 0, 1, 2)");
+            /*
             resultBox[i].setOnMouseClicked(e-> {
                 pStage.setScene(buildListingScene(pStage, topNav, bottomNav));
             });
+            */
 
             final int finalI = i;
 
@@ -81,6 +83,7 @@ public class SearchPage implements Page {
         return new VBox(searchLabel);
     }
 
+    /*
     private Scene buildListingScene(Stage pStage, Node topNav, Node bottomNav) {
         ListingPage lp = new ListingPage(new ItemListing("Book"));
         VBox content = new VBox(topNav, lp.getContent(), bottomNav);
@@ -89,6 +92,7 @@ public class SearchPage implements Page {
 
         return s1;
     }
+    */
 
     public void setSearchString(String s) {
         searchString = s;

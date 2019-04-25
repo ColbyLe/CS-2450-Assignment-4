@@ -1,10 +1,7 @@
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Node;
-import javafx.scene.control.Button;
-import javafx.scene.control.Hyperlink;
-import javafx.scene.control.ScrollPane;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.Scene;
@@ -38,7 +35,7 @@ public class PoconoMountainPL extends Application {
             showPage(new HomePage(), primaryStage);
         });
 
-        searchBar = new TextField("Find books and more");
+        searchBar = new TextField("Search our inventory");
 
         searchBar.setOnMouseClicked(e-> {
             searchBar.setText("");
@@ -117,17 +114,33 @@ public class PoconoMountainPL extends Application {
         return botNav;
     }
 
+    private HBox getSortBar() {
+        ComboBox typeBox = new ComboBox();
+        typeBox.getItems().addAll("All Types", "Book", "Journal", "Audiobook", "eBook", "VHS", "DVD", "Blu-Ray");
+
+        Label typeLabel = new Label("Type");
+        return new HBox(typeLabel, typeBox);
+    }
+
     private void showPage(Page p, Stage primaryStage) {
         // get page content, then place in VBox between top nav bar and bottom nav bar
 
         // on search, pass text of searchBar to activePage
+
+        Node extra;
+        if(p.getClass().equals("SearchPage")) {
+            extra = getSortBar();
+        }
+        else {
+            extra = new HBox();
+        }
 
         pageContent = p.getContent();
         pageContent.setOnMouseClicked(e-> {
             showPage(p.getChildPage(), primaryStage);
         });
 
-        VBox pageBox = new VBox(getTopNav(primaryStage), pageContent, getBottomNav(primaryStage));
+        VBox pageBox = new VBox(getTopNav(primaryStage), extra, pageContent, getBottomNav(primaryStage));
 
         System.out.println(p.getClass());
 
@@ -144,7 +157,6 @@ public class PoconoMountainPL extends Application {
         primaryScene.setOnKeyPressed(e-> {
             if(e.getCode() == KeyCode.ENTER) {
                 if(!(searchBar.getText().equals(""))) {
-                    System.out.println(searchBar.getText());
                     showPage(new SearchPage(searchBar.getText(), primaryStage, getTopNav(primaryStage), getBottomNav(primaryStage)), primaryStage);
                 }
             }

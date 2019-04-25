@@ -63,6 +63,8 @@ public class HomePage implements Page{
         VBox newsBox = new VBox(newsLabel, newsTitles[0], newsInfo[0], newsTitles[1], newsInfo[1], newsTitles[2], newsInfo[2], newsTitles[3], newsInfo[3]);
         newsBox.setPadding(new Insets(32,24,32,24));
         newsBox.setSpacing(8);
+        newsBox.setPrefWidth(640);
+        newsBox.setStyle("-fx-background-color: white");
 
         Label info = new Label("PMPL HOURS OF OPERATION:\n" +
                 "Monday 10:00 am - 6:00 pm \n" +
