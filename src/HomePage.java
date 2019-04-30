@@ -6,11 +6,11 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.VBox;
 
-public class Homepage implements Page{
+public class HomePage implements Page{
     private Node pageContent;
-    private String pageTitle;
+    private String pageTitle, searchString;
 
-    Homepage() {
+    HomePage() {
         pageContent = buildHomepage();
         pageTitle = "Pocono Mountain Public Library";
     }
@@ -21,6 +21,18 @@ public class Homepage implements Page{
 
     public String getTitle() {
         return pageTitle;
+    }
+
+    public boolean spawnsChildPage() {
+        return false;
+    }
+
+    public Page getChildPage() {
+        return this;
+    }
+
+    public void setSearchString(String s) {
+        searchString = s;
     }
 
     private static Node buildHomepage() {
@@ -54,6 +66,8 @@ public class Homepage implements Page{
         VBox newsBox = new VBox(newsLabel, newsTitles[0], newsInfo[0], newsTitles[1], newsInfo[1], newsTitles[2], newsInfo[2], newsTitles[3], newsInfo[3]);
         newsBox.setPadding(new Insets(32,24,32,24));
         newsBox.setSpacing(8);
+        newsBox.setPrefWidth(640);
+        newsBox.setStyle("-fx-background-color: white");
 
         Label info = new Label("PMPL HOURS OF OPERATION:\n" +
                 "Monday 10:00 am - 6:00 pm \n" +
