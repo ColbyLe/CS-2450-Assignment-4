@@ -69,7 +69,7 @@ public class PoconoMountainPL extends Application {
 
         navB[2] = new Button("Events");
         navB[2].setOnAction(e-> {
-
+            showPage(new EventPage(), primaryStage);
         });
 
 
