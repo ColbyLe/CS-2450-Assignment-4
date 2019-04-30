@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="94c2ba7d-14a2-409d-938f-3bbefb366531" name="Default Changelist" comment="- added getTitle method to Page interface&#10;- added functionality to allow primaryStage title to be set by">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="94c2ba7d-14a2-409d-938f-3bbefb366531" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -13,15 +11,103 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/PoconoMountainPL.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="952">
-              <caret line="56" column="20" selection-start-line="56" selection-start-column="20" selection-end-line="56" selection-end-column="20" />
+            <state relative-caret-position="248">
+              <caret line="114" column="38" selection-start-line="114" selection-start-column="38" selection-end-line="114" selection-end-column="38" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#695#696#0" expanded="true" />
-                <element signature="e#723#724#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/PrivacyPolicyPage.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="612">
+              <caret line="36" column="41" lean-forward="true" selection-start-line="36" selection-start-column="41" selection-end-line="36" selection-end-column="41" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#502#503#0" expanded="true" />
+                <element signature="e#530#531#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/HomePage.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="884">
+              <caret line="66" column="53" selection-start-line="66" selection-start-column="53" selection-end-line="66" selection-end-column="53" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="34">
+              <caret line="2" column="35" selection-start-line="2" selection-start-column="35" selection-end-line="2" selection-end-column="35" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/SearchPage.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="816">
+              <caret line="57" column="44" selection-start-line="57" selection-start-column="44" selection-end-line="57" selection-end-column="44" />
+              <folding>
+                <element signature="e#4335#4336#0" expanded="true" />
+                <element signature="e#4367#4368#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/DiscoverPage.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2108">
+              <caret line="137" selection-start-line="137" selection-end-line="137" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ListingPage.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="340">
+              <caret line="27" column="89" selection-start-line="27" selection-start-column="89" selection-end-line="27" selection-end-column="89" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ItemListing.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="17">
+              <caret line="1" column="46" selection-start-line="1" selection-start-column="46" selection-end-line="1" selection-end-column="46" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Page.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="187">
+              <caret line="12" column="22" selection-start-line="12" selection-start-column="22" selection-end-line="12" selection-end-column="22" />
+              <folding>
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -37,6 +123,13 @@
       </list>
     </option>
   </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>searchBar</find>
+      <find>setON</find>
+      <find>println</find>
+    </findStrings>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
@@ -49,20 +142,24 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/resources/stylesheets/main.css" />
-        <option value="$PROJECT_DIR$/src/main.css" />
-        <option value="$PROJECT_DIR$/src/Page.java" />
-        <option value="$PROJECT_DIR$/src/SearchPage.java" />
         <option value="$PROJECT_DIR$/src/Homepage.java" />
+        <option value="$PROJECT_DIR$/src/ItemListing.java" />
+        <option value="$PROJECT_DIR$/src/Page.java" />
+        <option value="$PROJECT_DIR$/src/main.css" />
         <option value="$PROJECT_DIR$/src/ListingPage.java" />
+        <option value="$PROJECT_DIR$/src/SearchPage.java" />
+        <option value="$PROJECT_DIR$/src/DiscoverPage.java" />
+        <option value="$PROJECT_DIR$/src/HomePage.java" />
         <option value="$PROJECT_DIR$/src/PoconoMountainPL.java" />
+        <option value="$PROJECT_DIR$/src/PrivacyPolicyPage.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-9" />
-    <option name="y" value="-9" />
-    <option name="width" value="977" />
-    <option name="height" value="1034" />
+    <option name="x" value="755" />
+    <option name="y" value="-20" />
+    <option name="width" value="975" />
+    <option name="height" value="1105" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -70,6 +167,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -80,38 +178,53 @@
             <path>
               <item name="CS-2450-Assignment-4" type="b2602c69:ProjectViewProjectNode" />
               <item name="CS-2450-Assignment-4" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CS-2450-Assignment-4" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CS-2450-Assignment-4" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CS-2450-Assignment-4" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CS-2450-Assignment-4" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Fonts" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
       <pane id="Scope" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1556059169428" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1556658883809" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
     <property name="restartRequiresConfirmation" value="false" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\Users\Colby\IdeaProjects\CS2450-Assignment4\src\Fonts" />
-      <recent name="D:\Users\Colby\IdeaProjects\CS2450-Assignment4\src" />
-      <recent name="D:\Users\Colby\IdeaProjects\CS2450-Assignment4" />
-      <recent name="D:\Users\Colby\IdeaProjects\CS2450-Assignment4\resources\fonts" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Users\Colby\IdeaProjects\CS2450-Assignment4\resources\images" />
       <recent name="D:\Users\Colby\IdeaProjects\CS2450-Assignment4\src\Fonts" />
       <recent name="D:\Users\Colby\IdeaProjects\CS2450-Assignment4\src" />
-      <recent name="D:\Users\Colby\IdeaProjects\CS2450-Assignment4\resources\images" />
       <recent name="D:\Users\Colby\IdeaProjects\CS2450-Assignment4\resources\fonts" />
       <recent name="D:\Users\Colby\IdeaProjects\CS2450-Assignment4" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Users\Colby\IdeaProjects\CS2450-Assignment4\resources\images" />
+      <recent name="D:\Users\Colby\IdeaProjects\CS2450-Assignment4\src\Fonts" />
+      <recent name="D:\Users\Colby\IdeaProjects\CS2450-Assignment4\src" />
+      <recent name="D:\Users\Colby\IdeaProjects\CS2450-Assignment4" />
+      <recent name="D:\Users\Colby\IdeaProjects\CS2450-Assignment4\resources\fonts" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -126,14 +239,8 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Unnamed">
-    <configuration name="Unnamed (1)" type="Application" factoryName="Application" nameIsGenerated="true">
-      <module name="CS2450-Assignment4" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Unnamed" type="Application" factoryName="Application" nameIsGenerated="true">
+  <component name="RunManager">
+    <configuration name="PoconoMountainPL" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="ALTERNATIVE_JRE_PATH" value="10" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="MAIN_CLASS_NAME" value="PoconoMountainPL" />
@@ -142,10 +249,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <list>
-      <item itemvalue="Application.Unnamed" />
-      <item itemvalue="Application.Unnamed (1)" />
-    </list>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -160,6 +263,11 @@
       <workItem from="1555989495886" duration="10522000" />
       <workItem from="1556001197425" duration="1524000" />
       <workItem from="1556054557144" duration="4660000" />
+      <workItem from="1556142063369" duration="388000" />
+      <workItem from="1556158012623" duration="1695000" />
+      <workItem from="1556218924987" duration="2598000" />
+      <workItem from="1556655826171" duration="3070000" />
+      <workItem from="1556659238293" duration="510000" />
     </task>
     <task id="LOCAL-00001" summary="Started home page">
       <created>1555995563014</created>
@@ -224,17 +332,158 @@
       <option name="project" value="LOCAL" />
       <updated>1556056039391</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="- added getTitle method to Page interface&#10;- added functionality to allow primaryStage title to be set by">
+      <created>1556158177751</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1556158177751</updated>
+    </task>
+    <task id="LOCAL-00011" summary="- added getTitle method to Page interface&#10;- added functionality to allow primaryStage title to be set by">
+      <created>1556218579164</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1556218579164</updated>
+    </task>
+    <task id="LOCAL-00012" summary="- filled out getContent method in ListingPage class">
+      <created>1556219572560</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1556219572560</updated>
+    </task>
+    <task id="LOCAL-00013" summary="- added DiscoverPage class&#10;- added spawnsChildPage method to Page interface">
+      <created>1556603735056</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1556603735056</updated>
+    </task>
+    <task id="LOCAL-00014" summary="- added DiscoverPage class&#10;- added spawnsChildPage method to Page interface">
+      <created>1556648330860</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1556648330860</updated>
+    </task>
+    <task id="LOCAL-00015" summary="- changed loading child pages">
+      <created>1556648855852</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1556648855852</updated>
+    </task>
+    <task id="LOCAL-00016" summary="- added isSearch boolean to SearchPage">
+      <created>1556649212475</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1556649212475</updated>
+    </task>
+    <task id="LOCAL-00017" summary="- added some css to discover page">
+      <created>1556650341386</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1556650341386</updated>
+    </task>
+    <task id="LOCAL-00018" summary="- added some css to discover page">
+      <created>1556650372858</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1556650372858</updated>
+    </task>
+    <task id="LOCAL-00019" summary="- changed discover page elements slightly">
+      <created>1556650615236</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1556650615236</updated>
+    </task>
+    <task id="LOCAL-00020" summary="- added mouse click handler to hyperlinks in discover page">
+      <created>1556651730866</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1556651730866</updated>
+    </task>
+    <task id="LOCAL-00021" summary="- added mouse click handler to hyperlinks in discover page">
+      <created>1556651850900</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1556651850900</updated>
+    </task>
+    <task id="LOCAL-00022" summary="- added mouse click handler to hyperlinks in discover page">
+      <created>1556651936851</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1556651936851</updated>
+    </task>
+    <task id="LOCAL-00023" summary="- added mouse click handler to hyperlinks in discover page">
+      <created>1556655776710</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1556655776710</updated>
+    </task>
+    <task id="LOCAL-00024" summary="- completed discover page functionality&#10;- pending discover page visual completion">
+      <created>1556657761821</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1556657761821</updated>
+    </task>
+    <task id="LOCAL-00025" summary="- completed discover page functionality&#10;- pending discover page visual completion">
+      <created>1556658162539</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1556658162539</updated>
+    </task>
+    <task id="LOCAL-00026" summary="- completed discover page functionality&#10;- pending discover page visual completion">
+      <created>1556658248411</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1556658248412</updated>
+    </task>
+    <task id="LOCAL-00027" summary="- completed discover page functionality&#10;- pending discover page visual completion">
+      <created>1556658441482</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1556658441483</updated>
+    </task>
+    <task id="LOCAL-00028" summary="- completed discover page functionality&#10;- pending discover page visual completion">
+      <created>1556658889304</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1556658889304</updated>
+    </task>
+    <task id="LOCAL-00029" summary="- started privacy policy page">
+      <created>1556659725811</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1556659725811</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="19385000" />
+    <option name="totallyTimeSpent" value="46618000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="835" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19664429" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49277267" visible="true" weight="0.15033557" />
+      <window_info id="Structure" order="1" sideWeight="0.50722736" side_tool="true" weight="0.13113007" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
       <window_info id="UI Designer" order="4" />
@@ -242,8 +491,8 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3297975" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.22475107" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.39922854" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.26458037" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39829302" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -252,7 +501,7 @@
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Terminal" order="10" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
-      <window_info anchor="bottom" id="Messages" order="12" weight="0.32859176" />
+      <window_info anchor="bottom" id="Messages" order="12" weight="0.32716927" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -264,8 +513,8 @@
       <window_info anchor="right" id="Palette&#9;" order="8" />
     </layout>
     <layout-to-restore>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.13646056" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49277267" visible="true" weight="0.14630872" />
+      <window_info id="Structure" order="1" sideWeight="0.50722736" side_tool="true" weight="0.13113007" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
       <window_info id="UI Designer" order="4" />
@@ -273,8 +522,8 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3297975" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.22565092" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.39922854" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.26458037" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39829302" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -283,7 +532,7 @@
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Terminal" order="10" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
-      <window_info anchor="bottom" id="Messages" order="12" weight="0.3297975" />
+      <window_info anchor="bottom" id="Messages" order="12" weight="0.32716927" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -304,7 +553,18 @@
     <MESSAGE value="- added Page interface&#10;- changed Homepage class to implement Page interface&#10;- added showPage method in PoconoMountainPL to change scenes in primaryStage&#10;- added primaryStage parameter to all methods in PoconoMountainPL" />
     <MESSAGE value="- started SearchPage class" />
     <MESSAGE value="- added event handler for primaryScene to showPage method to change active page to search results page" />
-    <option name="LAST_COMMIT_MESSAGE" value="- added event handler for primaryScene to showPage method to change active page to search results page" />
+    <MESSAGE value="- added getTitle method to Page interface&#10;- added functionality to allow primaryStage title to be set by" />
+    <MESSAGE value="- filled out getContent method in ListingPage class" />
+    <MESSAGE value="- added DiscoverPage class&#10;- added spawnsChildPage method to Page interface" />
+    <MESSAGE value="- changed loading child pages" />
+    <MESSAGE value="- added isSearch boolean to SearchPage" />
+    <MESSAGE value="- added some css to discover page" />
+    <MESSAGE value="- changed discover page elements slightly" />
+    <MESSAGE value="- added mouse click handler to hyperlinks in discover page" />
+    <MESSAGE value="- completed discover page functionality" />
+    <MESSAGE value="- completed discover page functionality&#10;- pending discover page visual completion" />
+    <MESSAGE value="- started privacy policy page" />
+    <option name="LAST_COMMIT_MESSAGE" value="- started privacy policy page" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/main.css" />
@@ -323,41 +583,12 @@
       <provider selected="true" editor-type-id="fontseditor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/.editorconfig" />
-    <entry file="file://$PROJECT_DIR$/src/Homepage.java">
+    <entry file="file://$PROJECT_DIR$/src/HomePage.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="211">
-          <caret line="22" column="25" selection-start-line="22" selection-start-column="25" selection-end-line="22" selection-end-column="25" />
+        <state relative-caret-position="884">
+          <caret line="66" column="53" selection-start-line="66" selection-start-column="53" selection-end-line="66" selection-end-column="53" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#540#541#0" expanded="true" />
-            <element signature="e#571#572#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ListingPage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="37" selection-start-line="8" selection-start-column="37" selection-end-line="8" selection-end-column="37" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#193#194#0" expanded="true" />
-            <element signature="e#222#223#0" expanded="true" />
-            <element signature="e#256#257#0" expanded="true" />
-            <element signature="e#277#278#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/SearchPage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="361">
-          <caret line="73" column="5" lean-forward="true" selection-start-line="73" selection-start-column="5" selection-end-line="73" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2902#2903#0" expanded="true" />
-            <element signature="e#2942#2943#0" expanded="true" />
-            <element signature="e#2974#2975#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -369,24 +600,69 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/PoconoMountainPL.java">
+    <entry file="file://$PROJECT_DIR$/src/SearchPage.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="56" column="20" selection-start-line="56" selection-start-column="20" selection-end-line="56" selection-end-column="20" />
+        <state relative-caret-position="816">
+          <caret line="57" column="44" selection-start-line="57" selection-start-column="44" selection-end-line="57" selection-end-column="44" />
+          <folding>
+            <element signature="e#4335#4336#0" expanded="true" />
+            <element signature="e#4367#4368#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DiscoverPage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2108">
+          <caret line="137" selection-start-line="137" selection-end-line="137" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#695#696#0" expanded="true" />
-            <element signature="e#723#724#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ListingPage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="27" column="89" selection-start-line="27" selection-start-column="89" selection-end-line="27" selection-end-column="89" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ItemListing.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="46" selection-start-line="1" selection-start-column="46" selection-end-line="1" selection-end-column="46" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Page.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+        <state relative-caret-position="187">
+          <caret line="12" column="22" selection-start-line="12" selection-start-column="22" selection-end-line="12" selection-end-column="22" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/PoconoMountainPL.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="248">
+          <caret line="114" column="38" selection-start-line="114" selection-start-column="38" selection-end-line="114" selection-end-column="38" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/PrivacyPolicyPage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="612">
+          <caret line="36" column="41" lean-forward="true" selection-start-line="36" selection-start-column="41" selection-end-line="36" selection-end-column="41" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#502#503#0" expanded="true" />
+            <element signature="e#530#531#0" expanded="true" />
           </folding>
         </state>
       </provider>
