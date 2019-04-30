@@ -104,11 +104,16 @@ public class PoconoMountainPL extends Application {
 
     private HBox getBottomNav(Stage primaryStage) {
         Hyperlink[] navLink = new Hyperlink[2];
-        navLink[0] = new Hyperlink("Contact Us");
+        navLink[0] = new Hyperlink("About Us");
         navLink[1] = new Hyperlink("Privacy Policy");
         for(Hyperlink x:navLink) {
             x.setStyle("-fx-text-fill: black");
         }
+
+        navLink[1].setOnAction(e-> {
+            PrivacyPolicyPage ppp = new PrivacyPolicyPage();
+            showPage(ppp, primaryStage);
+        });
 
         HBox botNav = new HBox(navLink[0], navLink[1]);
         botNav.setPrefHeight(64);
@@ -141,8 +146,13 @@ public class PoconoMountainPL extends Application {
 
         pageContent = p.getContent();
         pageContent.setOnMouseClicked(e-> {
+            System.out.println("Mouse clicked");
             if(p.spawnsChildPage()) {
+                System.out.println("Displaying new page.");
                 showPage(p, primaryStage);
+            }
+            else {
+                System.out.println("No new page to display");
             }
         });
 
@@ -163,7 +173,7 @@ public class PoconoMountainPL extends Application {
         primaryScene.setOnKeyPressed(e-> {
             if(e.getCode() == KeyCode.ENTER) {
                 if(!(searchBar.getText().equals(""))) {
-                    showPage(new SearchPage(searchBar.getText(), primaryStage, getTopNav(primaryStage), getBottomNav(primaryStage)), primaryStage);
+                    showPage(new SearchPage(searchBar.getText(), true), primaryStage);
                 }
             }
         });

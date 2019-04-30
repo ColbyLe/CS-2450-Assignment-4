@@ -11,26 +11,34 @@ import javafx.stage.Stage;
 
 public class SearchPage implements Page {
     private Node pageContent, topNav, bottomNav;
-    private String pageTitle, searchString;
+    private String pageTitle, searchString, category;
     private boolean hasChild;
 
-    public SearchPage(String searchedString, Stage primaryStage, Node tNav, Node bNav) {
+    public SearchPage(String searchedString, boolean isSearch) {
+        hasChild = true;
+        if(isSearch) {
+            category = "Book";
+            pageTitle = "Results for: \"" + searchedString + "\"";
+        }
+
+        else {
+            category = searchedString;
+            pageTitle = searchedString;
+        }
+
         if(!searchedString.equals("")) {
-            topNav = tNav;
-            bottomNav = bNav;
-            pageContent = buildSearchpage(searchedString, primaryStage);
+            pageContent = buildSearchpage(searchedString);
         }
         else {
             pageContent = buildBlankPage();
         }
 
-        hasChild = false;
-
-        pageTitle = "Results for: \"" + searchedString + "\"";
+        System.out.println("Searched string: " + searchedString);
+        System.out.println("Page title: " + pageTitle);
     }
 
-    private VBox buildSearchpage(String searchString, Stage pStage) {
-        Label searchLabel = new Label("Results for: \"" + searchString + "\"");
+    private VBox buildSearchpage(String searchString) {
+        Label searchLabel = new Label(pageTitle);
         Label[] resultTitles = new Label[5];
         Label[] resultType = new Label[5];
         Label[] resultInfo = new Label[5];
@@ -38,7 +46,7 @@ public class SearchPage implements Page {
         VBox[] resultBox = new VBox[5];
 
         searchLabel.setStyle("-fx-font-size: 20");
-        ItemListing il1 = new ItemListing("Book");
+        ItemListing il1 = new ItemListing(category);
 
         for(int i=0; i<5; i++) {
             resultTitles[i] = new Label(il1.getTitle());
@@ -61,7 +69,7 @@ public class SearchPage implements Page {
             });
             */
 
-            final int finalI = i;
+            int finalI = i;
 
             resultBox[i].setOnMouseEntered(e-> {
                 resultBox[finalI].setStyle("-fx-background-color: white; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.25), 3, 0, 2, 4)");
@@ -73,8 +81,8 @@ public class SearchPage implements Page {
 
             resultBox[i].setOnMouseClicked(e-> {
                 hasChild = true;
-                ItemListing il = new ItemListing("Book");
-                ListingPage lp = new ListingPage(il);
+                ItemListing il = new ItemListing(category);
+                ListingPage lp = new ListingPage(il, 0);
                 pageContent = lp.getContent();
             });
         }
@@ -118,9 +126,11 @@ public class SearchPage implements Page {
         return hasChild;
     }
 
+    /*
     public Page getChildPage() {
-        return new ListingPage(new ItemListing("Book"));
+        return new ListingPage(new ItemListing("Book"), 0);
     }
+    */
 
     public String getTitle() {
         return pageTitle;

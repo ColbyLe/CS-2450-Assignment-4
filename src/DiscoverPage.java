@@ -1,7 +1,7 @@
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Node;
-import javafx.scene.control.Hyperlink;
+import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
@@ -10,24 +10,30 @@ import javafx.scene.layout.VBox;
 public class DiscoverPage implements Page {
     private Node pageContent;
     private String pageTitle;
+    boolean hasChild;
 
     public DiscoverPage() {
         pageContent = buildDiscoverPage();
         pageTitle = "Discover";
+        hasChild = true;
     }
 
-    private static Node buildDiscoverPage() {
-        Hyperlink[] categories = new Hyperlink[10];
-        categories[0] = new Hyperlink("Books");
-        categories[1] = new Hyperlink("eBooks");
-        categories[2] = new Hyperlink(("Audiobooks"));
-        categories[3] = new Hyperlink("Newspaper Articles");
-        categories[4] = new Hyperlink("Journal Articles");
-        categories[5] = new Hyperlink("VHS");
-        categories[6] = new Hyperlink("DVD");
-        categories[7] = new Hyperlink("Blu-ray");
-        categories[8] = new Hyperlink("Maps");
-        categories[9] = new Hyperlink("Gov't Documents");
+    private Node buildDiscoverPage() {
+        Label[] categories = new Label[10];
+        categories[0] = new Label("Books");
+        categories[1] = new Label("eBooks");
+        categories[2] = new Label("Audiobooks");
+        categories[3] = new Label("Newspaper Articles");
+        categories[4] = new Label("Journal Articles");
+        categories[5] = new Label("VHS");
+        categories[6] = new Label("DVD");
+        categories[7] = new Label("Blu-ray");
+        categories[8] = new Label("Maps");
+        categories[9] = new Label("Gov't Documents");
+
+        for(Label x:categories) {
+
+        }
 
         VBox categoryBox = new VBox();
         categoryBox.setPrefWidth(160);
@@ -35,9 +41,25 @@ public class DiscoverPage implements Page {
         categoryBox.setPadding(new Insets(8));
         categoryBox.setSpacing(8);
         categoryBox.setStyle("-fx-background-color: rgb(255,121,121)");
-        for(Hyperlink x:categories) {
+        for(Label x:categories) {
             x.setStyle("-fx-text-fill: black");
             categoryBox.getChildren().add(x);
+
+            x.setOnMouseClicked(e-> {
+                System.out.println("Clicked element: " + x.getText());
+                SearchPage cPage = new SearchPage(x.getText(), false);
+                pageContent = cPage.getContent();
+                pageTitle = x.getText();
+                hasChild = true;
+            });
+
+            x.setOnMouseEntered(e-> {
+                x.setStyle("-fx-underline: true; -fx-text-fill: black");
+            });
+
+            x.setOnMouseExited(e-> {
+                x.setStyle("-fx-underline: false; -fx-text-fill: black");
+            });
         }
 
         Image[] covers = new Image[4];
@@ -48,13 +70,39 @@ public class DiscoverPage implements Page {
 
         ImageView[] coverView = new ImageView[4];
 
-        Image eMusk = new Image("file:resources/images/ElectricSpaceMan.jpg");
-        ImageView muskBox = new ImageView(eMusk);
+        Image mainImg = new Image("file:resources/images/ElectricSpaceMan.jpg");
+        ImageView mainImgBox = new ImageView(mainImg);
+        mainImgBox.setStyle("-fx-background-color: white; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.12), 3, 0, 1, 2)");
+
+        mainImgBox.setOnMouseClicked(e-> {
+            ItemListing il = new ItemListing("Book");
+            ListingPage mainListing = new ListingPage(il, 0);
+            pageContent = mainListing.getContent();
+            hasChild = true;
+        });
 
         for(int i=0; i<4; i++) {
             coverView[i] = new ImageView(covers[i]);
             coverView[i].setPreserveRatio(true);
             coverView[i].setFitWidth(100);
+            coverView[i].setStyle("-fx-background-color: white; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.12), 3, 0, 1, 2)");
+            int finalI = i;
+
+            coverView[i].setOnMouseClicked(e -> {
+                ItemListing il = new ItemListing("Book");
+                ListingPage mainListing = new ListingPage(il, finalI);
+                pageContent = mainListing.getContent();
+                hasChild = true;
+            });
+
+            coverView[i].setOnMouseEntered(e -> {
+                coverView[finalI].setStyle("-fx-background-color: white; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.25), 3, 0, 2, 4)");
+                mainImgBox.setImage(coverView[finalI].getImage());
+            });
+
+            coverView[i].setOnMouseExited(e -> {
+                coverView[finalI].setStyle("-fx-background-color: white; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.12), 3, 0, 1, 2)");
+            });
         }
 
         HBox coverBox = new HBox();
@@ -65,7 +113,7 @@ public class DiscoverPage implements Page {
             coverBox.getChildren().addAll(x);
         }
 
-        VBox pageBox = new VBox(muskBox, coverBox);
+        VBox pageBox = new VBox(mainImgBox, coverBox);
         pageBox.setPadding(new Insets(8));
         pageBox.setSpacing(32);
         pageBox.setAlignment(Pos.TOP_CENTER);
@@ -85,7 +133,7 @@ public class DiscoverPage implements Page {
 
     @Override
     public boolean spawnsChildPage() {
-        return false;
+        return hasChild;
     }
 
 }

@@ -11,10 +11,22 @@ public class ListingPage implements Page {
     private Node pageContent;
     private String pageTitle, searchString;
     private ItemListing info;
+    boolean hasChild;
+    Image bookCover;
 
-    public ListingPage(ItemListing il) {
+    public ListingPage(ItemListing il, int i) {
         pageTitle = "This is a " + il.getTitle();
         info = il;
+        hasChild = false;
+        switch(i) {
+            case 1: bookCover = new Image("file:resources/images/Seveneves.jpg");
+                break;
+            case 2: bookCover = new Image("file:resources/images/Annihilation.jpg");
+                break;
+            case 3: bookCover = new Image("file:resources/images/Wicked.jpg");
+                break;
+            default: bookCover = new Image("file:resources/images/ElectricSpaceMan.jpg");
+        }
     }
 
     public Node getContent() {
@@ -25,7 +37,7 @@ public class ListingPage implements Page {
         listingContent[2] = new Label(info.getInfo());
         listingContent[3] = new Label(info.getSummary());
 
-        Image bookCover = new Image("file:resources/images/ElectricSpaceMan.jpg");
+        //Image bookCover = new Image("file:resources/images/ElectricSpaceMan.jpg");
         ImageView coverView = new ImageView(bookCover);
 
         VBox contentBox = new VBox(coverView);
@@ -44,12 +56,14 @@ public class ListingPage implements Page {
 
     @Override
     public boolean spawnsChildPage() {
-        return false;
+        return hasChild;
     }
 
+    /*
     public Page getChildPage() {
         return this;
     }
+    */
 
     public void setSearchString(String s) {
         searchString = s;
