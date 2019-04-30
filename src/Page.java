@@ -8,5 +8,7 @@ public interface Page {
     // getTitle returns the page title
     abstract String getTitle();
 
+    abstract boolean spawnsChildPage();
+
     abstract Page getChildPage();
 }

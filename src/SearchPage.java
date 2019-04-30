@@ -102,6 +102,11 @@ public class SearchPage implements Page {
         return pageContent;
     }
 
+    @Override
+    public boolean spawnsChildPage() {
+        return true;
+    }
+
     public Page getChildPage() {
         return new ListingPage(new ItemListing("Book"));
     }

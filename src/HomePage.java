@@ -23,7 +23,10 @@ public class HomePage implements Page{
         return pageTitle;
     }
 
-    @Override
+    public boolean spawnsChildPage() {
+        return false;
+    }
+
     public Page getChildPage() {
         return this;
     }

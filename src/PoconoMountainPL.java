@@ -137,7 +137,9 @@ public class PoconoMountainPL extends Application {
 
         pageContent = p.getContent();
         pageContent.setOnMouseClicked(e-> {
-            showPage(p.getChildPage(), primaryStage);
+            if(p.spawnsChildPage()) {
+                showPage(p.getChildPage(), primaryStage);
+            }
         });
 
         VBox pageBox = new VBox(getTopNav(primaryStage), extra, pageContent, getBottomNav(primaryStage));
