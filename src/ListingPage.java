@@ -11,10 +11,12 @@ public class ListingPage implements Page {
     private Node pageContent;
     private String pageTitle, searchString;
     private ItemListing info;
+    boolean hasChild;
 
     public ListingPage(ItemListing il) {
         pageTitle = "This is a " + il.getTitle();
         info = il;
+        hasChild = false;
     }
 
     public Node getContent() {
@@ -44,12 +46,14 @@ public class ListingPage implements Page {
 
     @Override
     public boolean spawnsChildPage() {
-        return false;
+        return hasChild;
     }
 
+    /*
     public Page getChildPage() {
         return this;
     }
+    */
 
     public void setSearchString(String s) {
         searchString = s;

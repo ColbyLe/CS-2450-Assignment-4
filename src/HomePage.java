@@ -9,10 +9,12 @@ import javafx.scene.layout.VBox;
 public class HomePage implements Page{
     private Node pageContent;
     private String pageTitle, searchString;
+    boolean hasChild;
 
     HomePage() {
         pageContent = buildHomepage();
         pageTitle = "Pocono Mountain Public Library";
+        hasChild = false;
     }
 
     public Node getContent() {
@@ -24,12 +26,14 @@ public class HomePage implements Page{
     }
 
     public boolean spawnsChildPage() {
-        return false;
+        return hasChild;
     }
 
+    /*
     public Page getChildPage() {
         return this;
     }
+    */
 
     public void setSearchString(String s) {
         searchString = s;

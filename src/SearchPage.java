@@ -66,7 +66,7 @@ public class SearchPage implements Page {
             });
             */
 
-            final int finalI = i;
+            int finalI = i;
 
             resultBox[i].setOnMouseEntered(e-> {
                 resultBox[finalI].setStyle("-fx-background-color: white; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.25), 3, 0, 2, 4)");

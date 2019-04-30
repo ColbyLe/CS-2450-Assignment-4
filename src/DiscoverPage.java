@@ -10,10 +10,12 @@ import javafx.scene.layout.VBox;
 public class DiscoverPage implements Page {
     private Node pageContent;
     private String pageTitle;
+    boolean hasChild;
 
     public DiscoverPage() {
         pageContent = buildDiscoverPage();
         pageTitle = "Discover";
+        hasChild = false;
     }
 
     private static Node buildDiscoverPage() {
@@ -48,13 +50,28 @@ public class DiscoverPage implements Page {
 
         ImageView[] coverView = new ImageView[4];
 
-        Image eMusk = new Image("file:resources/images/ElectricSpaceMan.jpg");
-        ImageView muskBox = new ImageView(eMusk);
+        Image mainImg = new Image("file:resources/images/ElectricSpaceMan.jpg");
+        ImageView mainImgBox = new ImageView(mainImg);
+        mainImgBox.setStyle("-fx-background-color: white; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.12), 3, 0, 1, 2)");
 
         for(int i=0; i<4; i++) {
             coverView[i] = new ImageView(covers[i]);
             coverView[i].setPreserveRatio(true);
             coverView[i].setFitWidth(100);
+            coverView[i].setStyle("-fx-background-color: white; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.12), 3, 0, 1, 2)");
+            int finalI = i;
+
+            coverView[i].setOnMouseClicked(e -> {
+                mainImgBox.setImage(coverView[finalI].getImage());
+            });
+
+            coverView[i].setOnMouseEntered(e -> {
+                coverView[finalI].setStyle("-fx-background-color: white; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.25), 3, 0, 2, 4)");
+            });
+
+            coverView[i].setOnMouseExited(e -> {
+                coverView[finalI].setStyle("-fx-background-color: white; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.12), 3, 0, 1, 2)");
+            });
         }
 
         HBox coverBox = new HBox();
@@ -65,7 +82,7 @@ public class DiscoverPage implements Page {
             coverBox.getChildren().addAll(x);
         }
 
-        VBox pageBox = new VBox(muskBox, coverBox);
+        VBox pageBox = new VBox(mainImgBox, coverBox);
         pageBox.setPadding(new Insets(8));
         pageBox.setSpacing(32);
         pageBox.setAlignment(Pos.TOP_CENTER);
@@ -88,8 +105,9 @@ public class DiscoverPage implements Page {
         return false;
     }
 
-    @Override
+    /*
     public Page getChildPage() {
         return this;
     }
+    */
 }
