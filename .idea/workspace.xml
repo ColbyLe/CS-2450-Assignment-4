@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="94c2ba7d-14a2-409d-938f-3bbefb366531" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/DiscoverPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DiscoverPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PoconoMountainPL.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PoconoMountainPL.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SearchPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SearchPage.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -17,8 +18,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/PoconoMountainPL.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="884">
-              <caret line="165" column="71" selection-start-line="165" selection-start-column="71" selection-end-line="165" selection-end-column="71" />
+            <state relative-caret-position="588">
+              <caret line="165" column="69" selection-start-line="165" selection-start-column="69" selection-end-line="165" selection-end-column="69" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -35,16 +36,37 @@
           </provider>
         </entry>
       </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/SearchPage.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="612">
+              <caret line="45" column="50" selection-start-line="45" selection-start-column="50" selection-end-line="45" selection-end-column="50" />
+              <folding>
+                <element signature="e#3954#3955#0" expanded="true" />
+                <element signature="e#3986#3987#0" expanded="true" />
+                <element signature="e#4018#4019#0" expanded="true" />
+                <element signature="e#4052#4053#0" expanded="true" />
+                <element signature="e#4106#4107#0" expanded="true" />
+                <element signature="e#4137#4138#0" expanded="true" />
+                <element signature="e#4171#4172#0" expanded="true" />
+                <element signature="e#4234#4235#0" expanded="true" />
+                <element signature="e#4266#4267#0" expanded="true" />
+                <element signature="e#4298#4299#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/DiscoverPage.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="64" column="56" selection-start-line="64" selection-start-column="56" selection-end-line="64" selection-end-column="56" />
+            <state relative-caret-position="1438">
+              <caret line="113" column="23" selection-start-line="113" selection-start-column="23" selection-end-line="113" selection-end-column="23" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#3686#3687#0" expanded="true" />
-                <element signature="e#3764#3765#0" expanded="true" />
-                <element signature="e#3846#3847#0" expanded="true" />
+                <element signature="e#3936#3937#0" expanded="true" />
+                <element signature="e#4014#4015#0" expanded="true" />
+                <element signature="e#4099#4100#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -132,12 +154,12 @@
         <option value="$PROJECT_DIR$/src/main.css" />
         <option value="$PROJECT_DIR$/src/Homepage.java" />
         <option value="$PROJECT_DIR$/src/ItemListing.java" />
-        <option value="$PROJECT_DIR$/src/PoconoMountainPL.java" />
         <option value="$PROJECT_DIR$/src/Page.java" />
         <option value="$PROJECT_DIR$/src/HomePage.java" />
         <option value="$PROJECT_DIR$/src/ListingPage.java" />
-        <option value="$PROJECT_DIR$/src/SearchPage.java" />
+        <option value="$PROJECT_DIR$/src/PoconoMountainPL.java" />
         <option value="$PROJECT_DIR$/src/DiscoverPage.java" />
+        <option value="$PROJECT_DIR$/src/SearchPage.java" />
       </list>
     </option>
   </component>
@@ -379,11 +401,18 @@
       <option name="project" value="LOCAL" />
       <updated>1556650372858</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="- changed discover page elements slightly">
+      <created>1556650615236</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1556650615236</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="38397000" />
+    <option name="totallyTimeSpent" value="39299000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="835" extended-state="6" />
@@ -466,7 +495,8 @@
     <MESSAGE value="- changed loading child pages" />
     <MESSAGE value="- added isSearch boolean to SearchPage" />
     <MESSAGE value="- added some css to discover page" />
-    <option name="LAST_COMMIT_MESSAGE" value="- added some css to discover page" />
+    <MESSAGE value="- changed discover page elements slightly" />
+    <option name="LAST_COMMIT_MESSAGE" value="- changed discover page elements slightly" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/main.css" />
@@ -485,16 +515,6 @@
       <provider selected="true" editor-type-id="fontseditor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/.editorconfig" />
-    <entry file="file://$PROJECT_DIR$/src/PoconoMountainPL.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="884">
-          <caret line="165" column="71" selection-start-line="165" selection-start-column="71" selection-end-line="165" selection-end-column="71" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/HomePage.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
@@ -505,17 +525,6 @@
             <element signature="e#650#651#0" expanded="true" />
             <element signature="e#774#775#0" expanded="true" />
             <element signature="e#806#807#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ListingPage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="646">
-          <caret line="48" column="23" selection-start-line="48" selection-start-column="23" selection-end-line="48" selection-end-column="23" />
-          <folding>
-            <element signature="e#1498#1499#0" expanded="true" />
-            <element signature="e#1530#1531#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -537,10 +546,31 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/ListingPage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="646">
+          <caret line="48" column="23" selection-start-line="48" selection-start-column="23" selection-end-line="48" selection-end-column="23" />
+          <folding>
+            <element signature="e#1498#1499#0" expanded="true" />
+            <element signature="e#1530#1531#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/PoconoMountainPL.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="588">
+          <caret line="165" column="69" selection-start-line="165" selection-start-column="69" selection-end-line="165" selection-end-column="69" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/SearchPage.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="75" column="43" lean-forward="true" selection-start-line="75" selection-start-column="43" selection-end-line="75" selection-end-column="142" />
+        <state relative-caret-position="612">
+          <caret line="45" column="50" selection-start-line="45" selection-start-column="50" selection-end-line="45" selection-end-column="50" />
           <folding>
             <element signature="e#3954#3955#0" expanded="true" />
             <element signature="e#3986#3987#0" expanded="true" />
@@ -565,13 +595,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/DiscoverPage.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="64" column="56" selection-start-line="64" selection-start-column="56" selection-end-line="64" selection-end-column="56" />
+        <state relative-caret-position="1438">
+          <caret line="113" column="23" selection-start-line="113" selection-start-column="23" selection-end-line="113" selection-end-column="23" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#3686#3687#0" expanded="true" />
-            <element signature="e#3764#3765#0" expanded="true" />
-            <element signature="e#3846#3847#0" expanded="true" />
+            <element signature="e#3936#3937#0" expanded="true" />
+            <element signature="e#4014#4015#0" expanded="true" />
+            <element signature="e#4099#4100#0" expanded="true" />
           </folding>
         </state>
       </provider>
