@@ -8,6 +8,9 @@ public interface Page {
     // getTitle returns the page title
     abstract String getTitle();
 
+    // corresponds with boolean hasChild field
+    // true if page links to another page
+    // false otherwise
     abstract boolean spawnsChildPage();
 
     // abstract Page getChildPage();
