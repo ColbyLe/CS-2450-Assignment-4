@@ -13,7 +13,7 @@ public class ListingPage implements Page {
     private ItemListing info;
 
     public ListingPage(ItemListing il) {
-        pageTitle = "This is a Book";
+        pageTitle = "This is a " + il.getTitle();
         info = il;
     }
 

@@ -12,6 +12,7 @@ import javafx.stage.Stage;
 public class SearchPage implements Page {
     private Node pageContent, topNav, bottomNav;
     private String pageTitle, searchString;
+    private boolean hasChild;
 
     public SearchPage(String searchedString, Stage primaryStage, Node tNav, Node bNav) {
         if(!searchedString.equals("")) {
@@ -22,6 +23,9 @@ public class SearchPage implements Page {
         else {
             pageContent = buildBlankPage();
         }
+
+        hasChild = false;
+
         pageTitle = "Results for: \"" + searchedString + "\"";
     }
 
@@ -66,6 +70,13 @@ public class SearchPage implements Page {
             resultBox[i].setOnMouseExited(e-> {
                 resultBox[finalI].setStyle("-fx-background-color: white; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.12), 3, 0, 1, 2)");
             });
+
+            resultBox[i].setOnMouseClicked(e-> {
+                hasChild = true;
+                ItemListing il = new ItemListing("Book");
+                ListingPage lp = new ListingPage(il);
+                pageContent = lp.getContent();
+            });
         }
 
         VBox content = new VBox(searchLabel);
@@ -104,7 +115,7 @@ public class SearchPage implements Page {
 
     @Override
     public boolean spawnsChildPage() {
-        return true;
+        return hasChild;
     }
 
     public Page getChildPage() {

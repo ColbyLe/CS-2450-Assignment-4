@@ -142,7 +142,7 @@ public class PoconoMountainPL extends Application {
         pageContent = p.getContent();
         pageContent.setOnMouseClicked(e-> {
             if(p.spawnsChildPage()) {
-                showPage(p.getChildPage(), primaryStage);
+                showPage(p, primaryStage);
             }
         });
 
