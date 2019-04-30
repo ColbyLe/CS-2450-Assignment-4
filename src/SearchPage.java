@@ -33,8 +33,8 @@ public class SearchPage implements Page {
             pageContent = buildBlankPage();
         }
 
-        System.out.println("Searched string: " + searchedString);
-        System.out.println("Page title: " + pageTitle);
+        // System.out.println("Searched string: " + searchedString);
+        // System.out.println("Page title: " + pageTitle);
     }
 
     private VBox buildSearchpage(String searchString) {

@@ -145,9 +145,9 @@ public class PoconoMountainPL extends Application {
 
         pageContent = p.getContent();
         pageContent.setOnMouseClicked(e-> {
-            System.out.println("Mouse clicked");
+            // System.out.println("Mouse clicked");
             if(p.spawnsChildPage()) {
-                System.out.println("Displaying new page.");
+                // System.out.println("Displaying new page.");
                 showPage(p, primaryStage);
             }
             else {
