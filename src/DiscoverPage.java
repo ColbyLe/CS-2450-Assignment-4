@@ -15,7 +15,7 @@ public class DiscoverPage implements Page {
     public DiscoverPage() {
         pageContent = buildDiscoverPage();
         pageTitle = "Discover";
-        hasChild = false;
+        hasChild = true;
     }
 
     private Node buildDiscoverPage() {
@@ -33,9 +33,10 @@ public class DiscoverPage implements Page {
 
         for(Hyperlink x:categories) {
             x.setOnMouseClicked(e-> {
+                System.out.println("Clicked element: " + x.getText());
                 SearchPage cPage = new SearchPage(x.getText(), false);
-                hasChild = true;
                 pageContent = cPage.getContent();
+                hasChild = true;
             });
         }
 
@@ -62,6 +63,13 @@ public class DiscoverPage implements Page {
         ImageView mainImgBox = new ImageView(mainImg);
         mainImgBox.setStyle("-fx-background-color: white; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.12), 3, 0, 1, 2)");
 
+        mainImgBox.setOnMouseClicked(e-> {
+            ItemListing il = new ItemListing("Book");
+            ListingPage mainListing = new ListingPage(il);
+            pageContent = mainListing.getContent();
+            hasChild = true;
+        });
+
         for(int i=0; i<4; i++) {
             coverView[i] = new ImageView(covers[i]);
             coverView[i].setPreserveRatio(true);
@@ -70,7 +78,10 @@ public class DiscoverPage implements Page {
             int finalI = i;
 
             coverView[i].setOnMouseClicked(e -> {
-                System.out.println("This does a thing");
+                ItemListing il = new ItemListing("Book");
+                ListingPage mainListing = new ListingPage(il);
+                pageContent = mainListing.getContent();
+                hasChild = true;
             });
 
             coverView[i].setOnMouseEntered(e -> {

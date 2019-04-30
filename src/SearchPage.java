@@ -15,14 +15,7 @@ public class SearchPage implements Page {
     private boolean hasChild;
 
     public SearchPage(String searchedString, boolean isSearch) {
-        if(!searchedString.equals("")) {
-            pageContent = buildSearchpage(searchedString);
-        }
-        else {
-            pageContent = buildBlankPage();
-        }
-
-        hasChild = false;
+        hasChild = true;
         if(isSearch) {
             category = "Book";
             pageTitle = "Results for: \"" + searchedString + "\"";
@@ -32,10 +25,20 @@ public class SearchPage implements Page {
             category = searchedString;
             pageTitle = searchedString;
         }
+
+        if(!searchedString.equals("")) {
+            pageContent = buildSearchpage(searchedString);
+        }
+        else {
+            pageContent = buildBlankPage();
+        }
+
+        System.out.println("Searched string: " + searchedString);
+        System.out.println("Page title: " + pageTitle);
     }
 
     private VBox buildSearchpage(String searchString) {
-        Label searchLabel = new Label("Results for: \"" + searchString + "\"");
+        Label searchLabel = new Label(pageTitle);
         Label[] resultTitles = new Label[5];
         Label[] resultType = new Label[5];
         Label[] resultInfo = new Label[5];
@@ -78,7 +81,7 @@ public class SearchPage implements Page {
 
             resultBox[i].setOnMouseClicked(e-> {
                 hasChild = true;
-                ItemListing il = new ItemListing("Book");
+                ItemListing il = new ItemListing(category);
                 ListingPage lp = new ListingPage(il);
                 pageContent = lp.getContent();
             });

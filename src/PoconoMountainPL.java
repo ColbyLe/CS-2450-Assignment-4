@@ -6,6 +6,8 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.Scene;
 import javafx.scene.input.KeyCode;
+import javafx.scene.input.MouseButton;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
@@ -141,6 +143,7 @@ public class PoconoMountainPL extends Application {
 
         pageContent = p.getContent();
         pageContent.setOnMouseClicked(e-> {
+            System.out.println("Mouse clicked");
             if(p.spawnsChildPage()) {
                 System.out.println("Displaying new page.");
                 showPage(p, primaryStage);
