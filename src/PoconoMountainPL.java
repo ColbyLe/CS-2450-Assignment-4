@@ -110,6 +110,11 @@ public class PoconoMountainPL extends Application {
             x.setStyle("-fx-text-fill: black");
         }
 
+        navLink[1].setOnAction(e-> {
+            PrivacyPolicyPage ppp = new PrivacyPolicyPage();
+            showPage(ppp, primaryStage);
+        });
+
         HBox botNav = new HBox(navLink[0], navLink[1]);
         botNav.setPrefHeight(64);
         botNav.setPadding(new Insets(8,8,8,8));
