@@ -44,6 +44,7 @@ public class HomePage implements Page{
         ImageView pm = new ImageView(pmImg);
 
         Label newsLabel = new Label("What's New at PMPL");
+        newsLabel.setStyle("-fx-font-size: 20");
         newsLabel.setPrefWidth(976);
         newsLabel.setAlignment(Pos.BASELINE_LEFT);
 
@@ -63,6 +64,7 @@ public class HomePage implements Page{
         Label[] newsTitles = new Label[4];
         for(int i=0; i<4; i++) {
             newsTitles[i] = new Label("Lorem ipsum dolor sit amet");
+            newsTitles[i].setStyle("-fx-font-size: 16");
             newsTitles[i].setPrefWidth(976);
             newsTitles[i].setAlignment(Pos.BASELINE_LEFT);
         }
