@@ -11,14 +11,12 @@ import javafx.stage.Stage;
 
 public class SearchPage implements Page {
     private Node pageContent, topNav, bottomNav;
-    private String pageTitle, searchString;
+    private String pageTitle, searchString, category;
     private boolean hasChild;
 
-    public SearchPage(String searchedString, boolean isSearch, Stage primaryStage, Node tNav, Node bNav) {
+    public SearchPage(String searchedString, boolean isSearch) {
         if(!searchedString.equals("")) {
-            topNav = tNav;
-            bottomNav = bNav;
-            pageContent = buildSearchpage(searchedString, primaryStage);
+            pageContent = buildSearchpage(searchedString);
         }
         else {
             pageContent = buildBlankPage();
@@ -26,15 +24,17 @@ public class SearchPage implements Page {
 
         hasChild = false;
         if(isSearch) {
+            category = "Book";
             pageTitle = "Results for: \"" + searchedString + "\"";
         }
 
         else {
+            category = searchedString;
             pageTitle = searchedString;
         }
     }
 
-    private VBox buildSearchpage(String searchString, Stage pStage) {
+    private VBox buildSearchpage(String searchString) {
         Label searchLabel = new Label("Results for: \"" + searchString + "\"");
         Label[] resultTitles = new Label[5];
         Label[] resultType = new Label[5];
@@ -43,7 +43,7 @@ public class SearchPage implements Page {
         VBox[] resultBox = new VBox[5];
 
         searchLabel.setStyle("-fx-font-size: 20");
-        ItemListing il1 = new ItemListing("Book");
+        ItemListing il1 = new ItemListing(category);
 
         for(int i=0; i<5; i++) {
             resultTitles[i] = new Label(il1.getTitle());

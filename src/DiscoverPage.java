@@ -18,7 +18,7 @@ public class DiscoverPage implements Page {
         hasChild = false;
     }
 
-    private static Node buildDiscoverPage() {
+    private Node buildDiscoverPage() {
         Hyperlink[] categories = new Hyperlink[10];
         categories[0] = new Hyperlink("Books");
         categories[1] = new Hyperlink("eBooks");
@@ -30,6 +30,14 @@ public class DiscoverPage implements Page {
         categories[7] = new Hyperlink("Blu-ray");
         categories[8] = new Hyperlink("Maps");
         categories[9] = new Hyperlink("Gov't Documents");
+
+        for(Hyperlink x:categories) {
+            x.setOnMouseClicked(e-> {
+                SearchPage cPage = new SearchPage(x.getText(), false);
+                hasChild = true;
+                pageContent = cPage.getContent();
+            });
+        }
 
         VBox categoryBox = new VBox();
         categoryBox.setPrefWidth(160);
@@ -103,7 +111,7 @@ public class DiscoverPage implements Page {
 
     @Override
     public boolean spawnsChildPage() {
-        return false;
+        return hasChild;
     }
 
     /*

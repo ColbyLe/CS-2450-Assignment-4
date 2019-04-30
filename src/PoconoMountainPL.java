@@ -163,7 +163,7 @@ public class PoconoMountainPL extends Application {
         primaryScene.setOnKeyPressed(e-> {
             if(e.getCode() == KeyCode.ENTER) {
                 if(!(searchBar.getText().equals(""))) {
-                    showPage(new SearchPage(searchBar.getText(), true, primaryStage, getTopNav(primaryStage), getBottomNav(primaryStage)), primaryStage);
+                    showPage(new SearchPage(searchBar.getText(), true), primaryStage);
                 }
             }
         });
