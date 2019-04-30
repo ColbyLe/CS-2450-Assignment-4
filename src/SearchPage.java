@@ -14,7 +14,7 @@ public class SearchPage implements Page {
     private String pageTitle, searchString;
     private boolean hasChild;
 
-    public SearchPage(String searchedString, Stage primaryStage, Node tNav, Node bNav) {
+    public SearchPage(String searchedString, boolean isSearch, Stage primaryStage, Node tNav, Node bNav) {
         if(!searchedString.equals("")) {
             topNav = tNav;
             bottomNav = bNav;
@@ -25,8 +25,13 @@ public class SearchPage implements Page {
         }
 
         hasChild = false;
+        if(isSearch) {
+            pageTitle = "Results for: \"" + searchedString + "\"";
+        }
 
-        pageTitle = "Results for: \"" + searchedString + "\"";
+        else {
+            pageTitle = searchedString;
+        }
     }
 
     private VBox buildSearchpage(String searchString, Stage pStage) {
