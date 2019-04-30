@@ -106,7 +106,7 @@ public class PoconoMountainPL extends Application {
 
     private HBox getBottomNav(Stage primaryStage) {
         Hyperlink[] navLink = new Hyperlink[2];
-        navLink[0] = new Hyperlink("Contact Us");
+        navLink[0] = new Hyperlink("About Us");
         navLink[1] = new Hyperlink("Privacy Policy");
         for(Hyperlink x:navLink) {
             x.setStyle("-fx-text-fill: black");
