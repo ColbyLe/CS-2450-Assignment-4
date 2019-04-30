@@ -62,11 +62,12 @@ public class DiscoverPage implements Page {
             int finalI = i;
 
             coverView[i].setOnMouseClicked(e -> {
-                mainImgBox.setImage(coverView[finalI].getImage());
+                System.out.println("This does a thing");
             });
 
             coverView[i].setOnMouseEntered(e -> {
                 coverView[finalI].setStyle("-fx-background-color: white; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.25), 3, 0, 2, 4)");
+                mainImgBox.setImage(coverView[finalI].getImage());
             });
 
             coverView[i].setOnMouseExited(e -> {
