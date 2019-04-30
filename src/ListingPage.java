@@ -25,7 +25,7 @@ public class ListingPage implements Page {
         listingContent[2] = new Label(info.getInfo());
         listingContent[3] = new Label(info.getSummary());
 
-        Image bookCover = new Image("file:resources/images/theMusk.jpg");
+        Image bookCover = new Image("file:resources/images/ElectricSpaceMan.jpg");
         ImageView coverView = new ImageView(bookCover);
 
         VBox contentBox = new VBox(coverView);

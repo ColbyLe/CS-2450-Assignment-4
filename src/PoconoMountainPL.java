@@ -57,10 +57,14 @@ public class PoconoMountainPL extends Application {
         navB[1] = new Button("Discover");
         // dummy event handler
         navB[1].setOnAction(e-> {
+            showPage(new DiscoverPage(), primaryStage);
+
+            /*
             VBox blank1 = new VBox();
             VBox pageBox = new VBox(getTopNav(primaryStage), blank1, getBottomNav(primaryStage));
             primaryScene = new Scene(pageBox);
             primaryStage.setScene(primaryScene);
+            */
         });
 
         navB[2] = new Button("Events");
