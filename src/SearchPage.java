@@ -82,7 +82,7 @@ public class SearchPage implements Page {
             resultBox[i].setOnMouseClicked(e-> {
                 hasChild = true;
                 ItemListing il = new ItemListing(category);
-                ListingPage lp = new ListingPage(il);
+                ListingPage lp = new ListingPage(il, 0);
                 pageContent = lp.getContent();
             });
         }
@@ -126,9 +126,11 @@ public class SearchPage implements Page {
         return hasChild;
     }
 
+    /*
     public Page getChildPage() {
-        return new ListingPage(new ItemListing("Book"));
+        return new ListingPage(new ItemListing("Book"), 0);
     }
+    */
 
     public String getTitle() {
         return pageTitle;
