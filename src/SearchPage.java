@@ -84,6 +84,7 @@ public class SearchPage implements Page {
                 ItemListing il = new ItemListing(category);
                 ListingPage lp = new ListingPage(il, 0);
                 pageContent = lp.getContent();
+                pageTitle = lp.getTitle();
             });
         }
 

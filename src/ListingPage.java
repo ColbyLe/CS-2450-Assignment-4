@@ -15,7 +15,7 @@ public class ListingPage implements Page {
     Image bookCover;
 
     public ListingPage(ItemListing il, int i) {
-        pageTitle = "This is a " + il.getTitle();
+        pageTitle = il.getTitle();
         info = il;
         hasChild = false;
         switch(i) {

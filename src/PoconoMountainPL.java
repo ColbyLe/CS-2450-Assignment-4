@@ -15,7 +15,6 @@ public class PoconoMountainPL extends Application {
     private Scene primaryScene;
     private TextField searchBar;
     private Node pageContent;
-    private Page activePage;
 
     public static void main(String[] args) {
         launch(args);
