@@ -11,8 +11,8 @@ public class ListingPage implements Page {
     private Node pageContent;
     private String pageTitle, searchString;
     private ItemListing info;
-    boolean hasChild;
-    Image bookCover;
+    private boolean hasChild;
+    private Image bookCover;
 
     public ListingPage(ItemListing il, int i) {
         pageTitle = il.getTitle();
