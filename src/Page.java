@@ -10,5 +10,5 @@ public interface Page {
 
     abstract boolean spawnsChildPage();
 
-    abstract Page getChildPage();
+    //abstract Page getChildPage();
 }

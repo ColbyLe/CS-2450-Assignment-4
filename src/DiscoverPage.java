@@ -88,8 +88,4 @@ public class DiscoverPage implements Page {
         return false;
     }
 
-    @Override
-    public Page getChildPage() {
-        return this;
-    }
 }
