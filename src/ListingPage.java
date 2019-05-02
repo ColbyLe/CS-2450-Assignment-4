@@ -55,6 +55,7 @@ public class ListingPage implements Page {
             contentBox.getChildren().add(x);
         }
 
+
         pageContent = contentBox;
     }
 
