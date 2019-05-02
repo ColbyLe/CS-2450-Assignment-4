@@ -11,11 +11,13 @@ public class DiscoverPage implements Page {
     private Node pageContent;
     private String pageTitle;
     boolean hasChild;
+    private int currentBook;
 
     public DiscoverPage() {
         pageContent = buildDiscoverPage();
         pageTitle = "Discover";
         hasChild = true;
+        currentBook = 0;
     }
 
     private Node buildDiscoverPage() {
@@ -30,10 +32,6 @@ public class DiscoverPage implements Page {
         categories[7] = new Label("Blu-ray");
         categories[8] = new Label("Maps");
         categories[9] = new Label("Gov't Documents");
-
-        for(Label x:categories) {
-
-        }
 
         VBox categoryBox = new VBox();
         categoryBox.setPrefWidth(160);
@@ -76,7 +74,7 @@ public class DiscoverPage implements Page {
 
         mainImgBox.setOnMouseClicked(e-> {
             ItemListing il = new ItemListing("Book");
-            ListingPage mainListing = new ListingPage(il, 0);
+            ListingPage mainListing = new ListingPage(il, currentBook);
             pageContent = mainListing.getContent();
             hasChild = true;
         });
@@ -98,6 +96,7 @@ public class DiscoverPage implements Page {
             coverView[i].setOnMouseEntered(e -> {
                 coverView[finalI].setStyle("-fx-background-color: white; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.25), 3, 0, 2, 4)");
                 mainImgBox.setImage(coverView[finalI].getImage());
+                currentBook = finalI;
             });
 
             coverView[i].setOnMouseExited(e -> {
