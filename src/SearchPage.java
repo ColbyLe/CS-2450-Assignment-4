@@ -1,13 +1,7 @@
-import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.scene.Node;
-import javafx.scene.Scene;
-import javafx.scene.control.Hyperlink;
 import javafx.scene.control.Label;
-import javafx.scene.input.KeyCode;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.VBox;
-import javafx.stage.Stage;
 
 public class SearchPage implements Page {
     private Node pageContent, topNav, bottomNav;
@@ -82,7 +76,7 @@ public class SearchPage implements Page {
             resultBox[i].setOnMouseClicked(e-> {
                 hasChild = true;
                 ItemListing il = new ItemListing(category);
-                ListingPage lp = new ListingPage(il, 0);
+                ItemListingPage lp = new ItemListingPage(il, 0);
                 pageContent = lp.getContent();
                 pageTitle = lp.getTitle();
             });
@@ -105,7 +99,7 @@ public class SearchPage implements Page {
 
     /*
     private Scene buildListingScene(Stage pStage, Node topNav, Node bottomNav) {
-        ListingPage lp = new ListingPage(new ItemListing("Book"));
+        ItemListingPage lp = new ItemListingPage(new ItemListing("Book"));
         VBox content = new VBox(topNav, lp.getContent(), bottomNav);
         Scene s1 = new Scene(content);
         s1.getStylesheets().add("main.css");
@@ -129,7 +123,7 @@ public class SearchPage implements Page {
 
     /*
     public Page getChildPage() {
-        return new ListingPage(new ItemListing("Book"), 0);
+        return new ItemListingPage(new ItemListing("Book"), 0);
     }
     */
 

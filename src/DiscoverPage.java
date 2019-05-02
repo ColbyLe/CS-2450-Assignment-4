@@ -74,7 +74,7 @@ public class DiscoverPage implements Page {
 
         mainImgBox.setOnMouseClicked(e-> {
             ItemListing il = new ItemListing("Book");
-            ListingPage mainListing = new ListingPage(il, currentBook);
+            ItemListingPage mainListing = new ItemListingPage(il, currentBook);
             pageContent = mainListing.getContent();
             hasChild = true;
         });
@@ -88,7 +88,7 @@ public class DiscoverPage implements Page {
 
             coverView[i].setOnMouseClicked(e -> {
                 ItemListing il = new ItemListing("Book");
-                ListingPage mainListing = new ListingPage(il, finalI);
+                ItemListingPage mainListing = new ItemListingPage(il, finalI);
                 pageContent = mainListing.getContent();
                 hasChild = true;
             });

@@ -8,14 +8,14 @@ import javafx.scene.layout.VBox;
 
 import java.awt.*;
 
-public class ListingPage implements Page {
+public class ItemListingPage implements Page {
     private Node pageContent;
     private String pageTitle, searchString;
     private ItemListing info;
     private boolean hasChild;
     private Image bookCover;
 
-    public ListingPage(ItemListing il, int i) {
+    public ItemListingPage(ItemListing il, int i) {
         pageTitle = il.getTitle();
         info = il;
         hasChild = false;
