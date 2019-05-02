@@ -27,9 +27,15 @@ public class ListingPage implements Page {
                 break;
             default: bookCover = new Image("file:resources/images/ElectricSpaceMan.jpg");
         }
+
+        buildListingPage();
     }
 
     public Node getContent() {
+       return pageContent;
+    }
+
+    public void buildListingPage() {
         Label[] listingContent = new Label[4];
         listingContent[0] = new Label(info.getTitle());
         listingContent[0].setStyle("-fx-font-size: 20; -fx-font-weight: bold");
@@ -49,8 +55,9 @@ public class ListingPage implements Page {
             contentBox.getChildren().add(x);
         }
 
-        return contentBox;
+        pageContent = contentBox;
     }
+
     public String getTitle() {
         return pageTitle;
     }
@@ -66,7 +73,9 @@ public class ListingPage implements Page {
     }
     */
 
+    /*
     public void setSearchString(String s) {
         searchString = s;
     }
+    */
 }
