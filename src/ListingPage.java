@@ -32,7 +32,7 @@ public class ListingPage implements Page {
     public Node getContent() {
         Label[] listingContent = new Label[4];
         listingContent[0] = new Label(info.getTitle());
-        listingContent[0].setStyle("-fx-font-size: 16");
+        listingContent[0].setStyle("-fx-font-size: 20; -fx-font-weight: bold");
         listingContent[1] = new Label(info.getType());
         listingContent[2] = new Label(info.getInfo());
         listingContent[3] = new Label(info.getSummary());
@@ -40,9 +40,10 @@ public class ListingPage implements Page {
         //Image bookCover = new Image("file:resources/images/ElectricSpaceMan.jpg");
         ImageView coverView = new ImageView(bookCover);
 
-        VBox contentBox = new VBox(coverView);
-        contentBox.setPadding(new Insets(8));
+        VBox coverBox = new VBox(coverView);
+        coverBox.setPadding(new Insets(8));
 
+        VBox contentBox = new VBox(coverBox);
         for(Label x:listingContent) {
             x.setWrapText(true);
             contentBox.getChildren().add(x);
