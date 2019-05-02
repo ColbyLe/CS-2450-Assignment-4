@@ -1,4 +1,5 @@
 import javafx.geometry.Insets;
+import javafx.geometry.Pos;
 import javafx.scene.Node;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
@@ -47,14 +48,19 @@ public class ListingPage implements Page {
         ImageView coverView = new ImageView(bookCover);
 
         VBox coverBox = new VBox(coverView);
-        coverBox.setPadding(new Insets(8));
+        coverBox.setPadding(new Insets(8,8,8,32));
 
-        VBox contentBox = new VBox(coverBox);
+        VBox infoBox = new VBox(coverBox);
+        infoBox.setPadding(new Insets(8,8,8,64));
+        infoBox.setStyle("-fx-background-color: white");
+        infoBox.setPrefHeight(340);
         for(Label x:listingContent) {
             x.setWrapText(true);
-            contentBox.getChildren().add(x);
+            infoBox.getChildren().add(x);
         }
 
+        VBox contentBox = new VBox(coverBox, infoBox);
+        contentBox.setPrefHeight(640);
 
         pageContent = contentBox;
     }
