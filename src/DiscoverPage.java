@@ -36,11 +36,11 @@ public class DiscoverPage implements Page {
         VBox categoryBox = new VBox();
         categoryBox.setPrefWidth(160);
         categoryBox.setPrefHeight(1024);
-        categoryBox.setPadding(new Insets(8));
+        categoryBox.setPadding(new Insets(48,8,8,8));
         categoryBox.setSpacing(8);
-        categoryBox.setStyle("-fx-background-color: rgb(255,121,121)");
+        categoryBox.setStyle("-fx-background-color: gray");
         for(Label x:categories) {
-            x.setStyle("-fx-text-fill: black");
+            x.setStyle("-fx-text-fill: white; -fx-font-size: 14");
             categoryBox.getChildren().add(x);
 
             x.setOnMouseClicked(e-> {
@@ -52,13 +52,17 @@ public class DiscoverPage implements Page {
             });
 
             x.setOnMouseEntered(e-> {
-                x.setStyle("-fx-underline: true; -fx-text-fill: black");
+                x.setStyle("-fx-underline: true; -fx-text-fill: white; -fx-font-size: 14");
             });
 
             x.setOnMouseExited(e-> {
-                x.setStyle("-fx-underline: false; -fx-text-fill: black");
+                x.setStyle("-fx-underline: false; -fx-text-fill: white; -fx-font-size: 14");
             });
         }
+
+        Label header = new Label("What We're Reading");
+        header.setStyle("-fx-font-size: 20; -fx-font-weight: bold; -fx-font-family: Poppins");
+        header.setAlignment(Pos.CENTER);
 
         Image[] covers = new Image[4];
         covers[0] = new Image("file:resources/images/ElectricSpaceMan.jpg");
@@ -107,17 +111,75 @@ public class DiscoverPage implements Page {
         HBox coverBox = new HBox();
         coverBox.setSpacing(12);
         coverBox.setPadding(new Insets(8));
+        coverBox.setAlignment(Pos.CENTER);
 
         for(ImageView x:coverView) {
             coverBox.getChildren().addAll(x);
         }
 
-        VBox pageBox = new VBox(mainImgBox, coverBox);
-        pageBox.setPadding(new Insets(8));
-        pageBox.setSpacing(32);
+        VBox pageBox = new VBox(header, mainImgBox, coverBox, getItemBox());
+        pageBox.setPadding(new Insets(16,16,16,64));
+        pageBox.setSpacing(20);
         pageBox.setAlignment(Pos.TOP_CENTER);
 
         return new HBox(categoryBox, pageBox);
+    }
+
+    private Node getItemBox() {
+        String category = "Book";
+        Label[] resultTitles = new Label[4];
+        Label[] resultType = new Label[4];
+        Label[] resultInfo = new Label[4];
+        Label[] resultSummary = new Label[4];
+        VBox[] resultBox = new VBox[4];
+
+        ItemListing il1 = new ItemListing(category);
+
+        for(int i=0; i<4; i++) {
+            resultTitles[i] = new Label(il1.getTitle());
+            resultType[i] = new Label(il1.getType());
+            resultInfo[i] = new Label(il1.getInfo());
+            resultSummary[i] = new Label(il1.getSummary());
+
+            resultTitles[i].setWrapText(true);
+            resultInfo[i].setWrapText(true);
+            resultSummary[i].setWrapText(true);
+
+            resultTitles[i].setStyle("-fx-font-size: 16px");
+
+            resultBox[i] = new VBox(resultTitles[i], resultType[i], resultInfo[i], resultSummary[i]);
+            resultBox[i].setPadding(new Insets(8,8,8,8));
+            resultBox[i].setStyle("-fx-background-color: white; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.12), 3, 0, 1, 2)");
+            /*
+            resultBox[i].setOnMouseClicked(e-> {
+                pStage.setScene(buildListingScene(pStage, topNav, bottomNav));
+            });
+            */
+
+            int finalI = i;
+
+            resultBox[i].setOnMouseEntered(e-> {
+                resultBox[finalI].setStyle("-fx-background-color: white; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.25), 3, 0, 2, 4)");
+            });
+
+            resultBox[i].setOnMouseExited(e-> {
+                resultBox[finalI].setStyle("-fx-background-color: white; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.12), 3, 0, 1, 2)");
+            });
+
+            resultBox[i].setOnMouseClicked(e-> {
+                hasChild = true;
+                ItemListing il = new ItemListing(category);
+                ItemListingPage lp = new ItemListingPage(il, 0);
+                pageContent = lp.getContent();
+                pageTitle = lp.getTitle();
+            });
+        }
+        VBox itemBox = new VBox();
+        itemBox.setSpacing(16);
+        for(VBox x : resultBox) {
+            itemBox.getChildren().add(x);
+        }
+        return itemBox;
     }
 
     @Override

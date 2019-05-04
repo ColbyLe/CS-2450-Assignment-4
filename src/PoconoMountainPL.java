@@ -102,19 +102,16 @@ public class PoconoMountainPL extends Application {
     }
 
     private HBox getBottomNav(Stage primaryStage) {
-        Hyperlink[] navLink = new Hyperlink[2];
-        navLink[0] = new Hyperlink("About Us");
-        navLink[1] = new Hyperlink("Privacy Policy");
-        for(Hyperlink x:navLink) {
-            x.setStyle("-fx-text-fill: black");
-        }
+        Hyperlink navLink = new Hyperlink("Privacy Policy");
+        //navLink[0] = new Hyperlink("About Us");
+        navLink.setStyle("-fx-text-fill: rgb(0,121,121)");
 
-        navLink[1].setOnAction(e-> {
+        navLink.setOnAction(e-> {
             PrivacyPolicyPage ppp = new PrivacyPolicyPage();
             showPage(ppp, primaryStage);
         });
 
-        HBox botNav = new HBox(navLink[0], navLink[1]);
+        HBox botNav = new HBox(navLink);
         botNav.setPrefHeight(64);
         botNav.setPadding(new Insets(8,8,8,8));
         botNav.setAlignment(Pos.CENTER_RIGHT);
@@ -122,6 +119,8 @@ public class PoconoMountainPL extends Application {
         return botNav;
     }
 
+
+    /*
     private HBox getSortBar() {
         ComboBox typeBox = new ComboBox();
         typeBox.getItems().addAll("All Types", "Book", "Journal", "Audiobook", "eBook", "VHS", "DVD", "Blu-Ray");
@@ -129,19 +128,22 @@ public class PoconoMountainPL extends Application {
         Label typeLabel = new Label("Type");
         return new HBox(typeLabel, typeBox);
     }
+    */
 
     private void showPage(Page p, Stage primaryStage) {
         // get page content, then place in VBox between top nav bar and bottom nav bar
 
         // on search, pass text of searchBar to activePage
 
+        /*
         Node extra;
-        if(p.getClass().equals("SearchPage")) {
+        if(p.getClass().equals("class SearchPage")) {
             extra = getSortBar();
         }
         else {
             extra = new HBox();
         }
+        */
 
         pageContent = p.getContent();
         pageContent.setOnMouseClicked(e-> {
@@ -155,7 +157,7 @@ public class PoconoMountainPL extends Application {
             }
         });
 
-        VBox pageBox = new VBox(getTopNav(primaryStage), extra, pageContent, getBottomNav(primaryStage));
+        VBox pageBox = new VBox(getTopNav(primaryStage), pageContent, getBottomNav(primaryStage));
 
         System.out.println(p.getClass());
 

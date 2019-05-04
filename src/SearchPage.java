@@ -1,6 +1,7 @@
 import javafx.geometry.Insets;
 import javafx.scene.Node;
 import javafx.scene.control.Label;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 
 public class SearchPage implements Page {
@@ -12,12 +13,12 @@ public class SearchPage implements Page {
         hasChild = true;
         if(isSearch) {
             category = "Book";
-            pageTitle = "Results for: \"" + searchedString + "\"";
+            pageTitle = " Results for: \"" + searchedString + "\"";
         }
 
         else {
             category = searchedString;
-            pageTitle = searchedString;
+            pageTitle = " " + searchedString;
         }
 
         if(!searchedString.equals("")) {
@@ -31,7 +32,7 @@ public class SearchPage implements Page {
         // System.out.println("Page title: " + pageTitle);
     }
 
-    private VBox buildSearchpage(String searchString) {
+    private Node buildSearchpage(String searchString) {
         Label searchLabel = new Label(pageTitle);
         Label[] resultTitles = new Label[5];
         Label[] resultType = new Label[5];
@@ -82,14 +83,59 @@ public class SearchPage implements Page {
             });
         }
 
-        VBox content = new VBox(searchLabel);
-        content.setPadding(new Insets(8,16,32,16));
-        content.setSpacing(32);
+        VBox searchContent = new VBox(searchLabel);
+        searchContent.setPadding(new Insets(8,16,32,16));
+        searchContent.setSpacing(32);
 
-        for(int i=0; i<5; i++) {
-            content.getChildren().add(resultBox[i]);
+        for(VBox x : resultBox) {
+            searchContent.getChildren().add(x);
         }
-        return content;
+
+        HBox retContent = new HBox(getCategoryBar(), searchContent);
+        return retContent;
+    }
+
+    private Node getCategoryBar() {
+        Label[] categories = new Label[10];
+        categories[0] = new Label("Books");
+        categories[1] = new Label("eBooks");
+        categories[2] = new Label("Audiobooks");
+        categories[3] = new Label("Newspaper Articles");
+        categories[4] = new Label("Journal Articles");
+        categories[5] = new Label("VHS");
+        categories[6] = new Label("DVD");
+        categories[7] = new Label("Blu-ray");
+        categories[8] = new Label("Maps");
+        categories[9] = new Label("Gov't Documents");
+
+        VBox categoryBox = new VBox();
+        categoryBox.setPrefWidth(160);
+        categoryBox.setPrefHeight(1024);
+        categoryBox.setPadding(new Insets(48,8,8,8));
+        categoryBox.setSpacing(8);
+        categoryBox.setStyle("-fx-background-color: gray");
+        for(Label x:categories) {
+            x.setStyle("-fx-text-fill: white; -fx-font-size: 14");
+            categoryBox.getChildren().add(x);
+
+            x.setOnMouseClicked(e-> {
+                System.out.println("Clicked element: " + x.getText());
+                SearchPage cPage = new SearchPage(x.getText(), false);
+                pageContent = cPage.getContent();
+                pageTitle = x.getText();
+                hasChild = true;
+            });
+
+            x.setOnMouseEntered(e-> {
+                x.setStyle("-fx-underline: true; -fx-text-fill: white; -fx-font-size: 14");
+            });
+
+            x.setOnMouseExited(e-> {
+                x.setStyle("-fx-underline: false; -fx-text-fill: white; -fx-font-size: 14");
+            });
+        }
+
+        return categoryBox;
     }
 
     private Node buildBlankPage() {

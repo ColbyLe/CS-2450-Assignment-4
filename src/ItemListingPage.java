@@ -48,7 +48,7 @@ public class ItemListingPage implements Page {
         ImageView coverView = new ImageView(bookCover);
 
         VBox coverBox = new VBox(coverView);
-        coverBox.setPadding(new Insets(8,8,8,32));
+        coverBox.setPadding(new Insets(8,8,8,64));
 
         VBox infoBox = new VBox(coverBox);
         infoBox.setPadding(new Insets(8,8,8,64));
