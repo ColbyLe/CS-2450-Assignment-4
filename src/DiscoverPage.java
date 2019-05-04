@@ -4,6 +4,7 @@ import javafx.scene.Node;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 
@@ -186,13 +187,81 @@ public class DiscoverPage implements Page {
             });
         }
 
+        categories[1].setOnMouseClicked(e-> {
+            System.out.println("Clicked element: " + categories[1].getText());
+            pageContent = getEbooksPage();
+            pageTitle = "eBooks";
+            hasChild = true;
+        });
+
         return categoryBox;
     }
 
     private Node getEbooksPage() {
-        VBox[] iconBoxes = new VBox[4];
+        VBox[] iconBoxes = new VBox[5];
 
-        return new HBox(getCategoryBox());
+        Image[] icons = new Image[5];
+        icons[0] = new Image("file:resources/images/hoopla.jpg");
+        icons[1] = new Image("file:resources/images/rb.jpg");
+        icons[2] = new Image("file:resources/images/overdrive.jpg");
+        icons[3] = new Image("file:resources/images/tumble.jpg");
+        icons[4] = new Image("file:resources/images/zinio.png");
+
+
+        Label[] iconText = new Label[5];
+        iconText[0] = new Label("Hoopla");
+        iconText[1] = new Label("rbDigital");
+        iconText[2] = new Label("OverDrive");
+        iconText[3] = new Label("TumbleBooks");
+        iconText[4] = new Label("Zinio");
+
+        for(int i=0; i<5; i++) {
+            int finalI = i;
+
+            ImageView iconView = new ImageView(icons[i]);
+            //iconView.setStyle("-fx-background-color: white; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.12), 3, 0, 1, 2)");
+
+            iconText[i].setStyle("-fx-font-size: 14");
+            iconBoxes[i] = new VBox(iconView, iconText[i]);
+            iconBoxes[i].setAlignment(Pos.CENTER);
+            iconBoxes[i].setMinSize(240,240);
+            iconBoxes[i].setMaxWidth(528);
+            iconBoxes[i].setMaxHeight(240);
+            iconBoxes[i].setStyle("-fx-background-color: white");
+
+            iconBoxes[i].setOnMouseEntered(e-> {
+                iconBoxes[finalI].setStyle("-fx-background-color: white; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.25), 3, 0, 2, 4)");
+            });
+
+            iconBoxes[i].setOnMouseExited(e-> {
+                iconBoxes[finalI].setStyle("-fx-background-color: white; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.12), 3, 0, 1, 2)");
+            });
+        }
+
+        GridPane ePane = new GridPane();
+        ePane.setHgap(48);
+        ePane.setVgap(48);
+        ePane.setAlignment(Pos.CENTER);
+        ePane.setPadding(new Insets(48,16,32,16));
+        ePane.add(iconBoxes[0], 0,0);
+        ePane.add(iconBoxes[1], 1,0);
+        ePane.add(iconBoxes[2], 0,1);
+        ePane.add(iconBoxes[3], 1,1);
+
+        VBox paneBox = new VBox(ePane, iconBoxes[4]);
+        paneBox.setPadding(new Insets(48,16,32,16));
+        paneBox.setAlignment(Pos.CENTER);
+
+        Label title = new Label("eBooks");
+        title.setStyle("-fx-font-size: 20; -fx-font-weight: bold");
+        Label spiel = new Label("Browse for eBooks with one of our partners:");
+        spiel.setStyle("-fx-font-size: 16");
+
+        VBox contentBox = new VBox(title, spiel, ePane, iconBoxes[4]);
+        contentBox.setAlignment(Pos.TOP_CENTER);
+        contentBox.setPadding(new Insets(16,16,16,64));
+
+        return new HBox(getCategoryBox(), contentBox);
     }
 
     @Override

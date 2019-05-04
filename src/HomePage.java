@@ -73,7 +73,7 @@ public class HomePage implements Page{
         newsBox.setPadding(new Insets(32,24,32,24));
         newsBox.setSpacing(8);
         newsBox.setPrefWidth(640);
-        newsBox.setStyle("-fx-background-color: white");
+        newsBox.setStyle("-fx-background-color: white; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.12), 3, 0, 1, 2)");
 
         Label info = new Label("PMPL HOURS OF OPERATION:\n" +
                 "Monday 10:00 am - 6:00 pm \n" +
