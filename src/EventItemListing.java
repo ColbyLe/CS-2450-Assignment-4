@@ -1,8 +1,8 @@
 import javafx.scene.image.Image;
 
 public class EventItemListing {
-    Image eventImage;
-    String name, datetime, description;
+    private Image eventImage;
+    private String name, datetime, description;
 
     public EventItemListing(int i) {
         switch(i) {
