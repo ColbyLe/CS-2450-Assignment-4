@@ -10,8 +10,8 @@ import javafx.scene.text.Text;
 import javafx.scene.text.TextBoundsType;
 
 public class PrivacyPolicyPage implements Page {
-    Node pageContent;
-    String pageTitle;
+    private Node pageContent;
+    private String pageTitle;
 
     public PrivacyPolicyPage() {
         pageContent = buildPPPage();
