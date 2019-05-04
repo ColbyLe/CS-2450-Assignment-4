@@ -119,6 +119,11 @@ public class AboutPage implements Page {
         return new VBox(infoBox);
     }
 
+    public Node getCategoryBox() {
+
+        return null;
+    }
+
     public Node getContent() {
         return pageContent;
     }
