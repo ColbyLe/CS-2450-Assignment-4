@@ -27,14 +27,14 @@ public class DiscoverPage implements Page {
         header.setAlignment(Pos.CENTER);
 
         Image[] covers = new Image[4];
-        covers[0] = new Image("file:resources/images/ElectricSpaceMan.jpg");
+        covers[0] = new Image("file:resources/images/Mars.jpg");
         covers[1] = new Image("file:resources/images/Seveneves.jpg");
         covers[2] = new Image("file:resources/images/Annihilation.jpg");
         covers[3] = new Image("file:resources/images/Wicked.jpg");
 
         ImageView[] coverView = new ImageView[4];
 
-        Image mainImg = new Image("file:resources/images/ElectricSpaceMan.jpg");
+        Image mainImg = new Image("file:resources/images/Mars.jpg");
         ImageView mainImgBox = new ImageView(mainImg);
         mainImgBox.setStyle("-fx-background-color: white; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.12), 3, 0, 1, 2)");
 

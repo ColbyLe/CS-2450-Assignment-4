@@ -19,7 +19,7 @@ public class EventPage implements Page {
 
     /*
     private static Node buildEventpage() {
-        Image eMusk = new Image("file:resources/images/ElectricSpaceMan.jpg");
+        Image eMusk = new Image("file:resources/images/Mars.jpg");
         ImageView imgBox = new ImageView(eMusk);
         ImageView imgBox1 = new ImageView(eMusk);
         ImageView imgBox2 = new ImageView(eMusk);

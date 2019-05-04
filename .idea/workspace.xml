@@ -2,8 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="94c2ba7d-14a2-409d-938f-3bbefb366531" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/resources/images/Mars.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/PrivacyPolicyPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PrivacyPolicyPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/images/ElectricSpaceMan.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/images/Wicked.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/images/Wicked.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DiscoverPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DiscoverPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/EventPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/EventPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ItemListingPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ItemListingPage.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -39,7 +44,7 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/PrivacyPolicyPage.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="254">
+            <state relative-caret-position="476">
               <caret line="30" column="43" selection-start-line="30" selection-start-column="43" selection-end-line="30" selection-end-column="43" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -168,8 +173,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="666" />
-    <option name="y" value="-16" />
+    <option name="x" value="476" />
+    <option name="y" value="-23" />
     <option name="width" value="974" />
     <option name="height" value="1161" />
   </component>
@@ -195,6 +200,12 @@
             <path>
               <item name="CS2450-Assignment4" type="b2602c69:ProjectViewProjectNode" />
               <item name="CS2450-Assignment4" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="images" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CS2450-Assignment4" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CS2450-Assignment4" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -207,7 +218,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1556961915351" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1556962961962" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -564,11 +575,18 @@
       <option name="project" value="LOCAL" />
       <updated>1556961261001</updated>
     </task>
-    <option name="localTasksCounter" value="42" />
+    <task id="LOCAL-00042" summary="- completed eBooks page overhaul">
+      <created>1556961986930</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1556961986931</updated>
+    </task>
+    <option name="localTasksCounter" value="43" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="69485000" />
+    <option name="totallyTimeSpent" value="70574000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -580,10 +598,9 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1170" extended-state="6" />
-    <editor active="true" />
+    <frame x="932" y="118" width="974" height="1161" extended-state="0" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49169436" visible="true" weight="0.13326226" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49169436" visible="true" weight="0.27352297" />
       <window_info id="Structure" order="1" sideWeight="0.50830567" side_tool="true" weight="0.13326226" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -591,8 +608,8 @@
       <window_info id="Capture Tool" order="5" />
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32786885" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49798658" visible="true" weight="0.41947928" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.3307393" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49798658" visible="true" weight="0.4192607" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39826423" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -831,9 +848,12 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/resources/images/Mars.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/PrivacyPolicyPage.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="254">
+        <state relative-caret-position="476">
           <caret line="30" column="43" selection-start-line="30" selection-start-column="43" selection-end-line="30" selection-end-column="43" />
           <folding>
             <element signature="imports" expanded="true" />

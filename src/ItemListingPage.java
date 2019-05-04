@@ -27,7 +27,7 @@ public class ItemListingPage implements Page {
                 break;
             case 3: bookCover = new Image("file:resources/images/Wicked.jpg");
                 break;
-            default: bookCover = new Image("file:resources/images/ElectricSpaceMan.jpg");
+            default: bookCover = new Image("file:resources/images/Mars.jpg");
         }
 
         buildListingPage();
@@ -45,7 +45,7 @@ public class ItemListingPage implements Page {
         listingContent[2] = new Label(info.getInfo());
         listingContent[3] = new Label(info.getSummary());
 
-        //Image bookCover = new Image("file:resources/images/ElectricSpaceMan.jpg");
+        //Image bookCover = new Image("file:resources/images/Mars.jpg");
         ImageView coverView = new ImageView(bookCover);
         coverView.setStyle("-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.12), 3, 0, 1, 2)");
         VBox coverBox = new VBox(coverView);
