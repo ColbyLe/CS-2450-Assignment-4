@@ -1,4 +1,5 @@
 import javafx.geometry.Insets;
+import javafx.geometry.Pos;
 import javafx.scene.Node;
 import javafx.scene.control.Label;
 import javafx.scene.layout.HBox;
@@ -40,7 +41,7 @@ public class SearchPage implements Page {
         Label[] resultSummary = new Label[5];
         VBox[] resultBox = new VBox[5];
 
-        searchLabel.setStyle("-fx-font-size: 20");
+        searchLabel.setStyle("-fx-font-size: 20; -fx-font-weight: bold");
         ItemListing il1 = new ItemListing(category);
 
         for(int i=0; i<5; i++) {
@@ -86,6 +87,7 @@ public class SearchPage implements Page {
         VBox searchContent = new VBox(searchLabel);
         searchContent.setPadding(new Insets(8,16,32,16));
         searchContent.setSpacing(32);
+        searchContent.setAlignment(Pos.CENTER);
 
         for(VBox x : resultBox) {
             searchContent.getChildren().add(x);
@@ -108,15 +110,15 @@ public class SearchPage implements Page {
         categories[8] = new Label("Maps");
         categories[9] = new Label("Gov't Documents");
 
-        VBox categoryBox = new VBox();
-        categoryBox.setPrefWidth(160);
-        categoryBox.setPrefHeight(1024);
-        categoryBox.setPadding(new Insets(48,8,8,8));
-        categoryBox.setSpacing(8);
-        categoryBox.setStyle("-fx-background-color: gray");
+        VBox categoryBar = new VBox();
+        categoryBar.setPrefWidth(160);
+        categoryBar.setPrefHeight(1024);
+        categoryBar.setPadding(new Insets(48,8,8,8));
+        categoryBar.setSpacing(8);
+        categoryBar.setStyle("-fx-background-color: gray");
         for(Label x:categories) {
             x.setStyle("-fx-text-fill: white; -fx-font-size: 14");
-            categoryBox.getChildren().add(x);
+            categoryBar.getChildren().add(x);
 
             x.setOnMouseClicked(e-> {
                 System.out.println("Clicked element: " + x.getText());
@@ -135,7 +137,7 @@ public class SearchPage implements Page {
             });
         }
 
-        return categoryBox;
+        return categoryBar;
     }
 
     private Node buildBlankPage() {

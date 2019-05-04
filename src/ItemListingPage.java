@@ -4,6 +4,7 @@ import javafx.scene.Node;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 
 import java.awt.*;
@@ -46,13 +47,13 @@ public class ItemListingPage implements Page {
 
         //Image bookCover = new Image("file:resources/images/ElectricSpaceMan.jpg");
         ImageView coverView = new ImageView(bookCover);
-
+        coverView.setStyle("-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.12), 3, 0, 1, 2)");
         VBox coverBox = new VBox(coverView);
         coverBox.setPadding(new Insets(8,8,8,64));
 
-        VBox infoBox = new VBox(coverBox);
+        VBox infoBox = new VBox();
         infoBox.setPadding(new Insets(8,8,8,64));
-        infoBox.setStyle("-fx-background-color: white");
+        //infoBox.setStyle("-fx-background-color: white; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.12), 3, 0, 1, 2)");
         infoBox.setPrefHeight(340);
         for(Label x:listingContent) {
             x.setWrapText(true);
@@ -60,9 +61,18 @@ public class ItemListingPage implements Page {
         }
 
         VBox contentBox = new VBox(coverBox, infoBox);
-        contentBox.setPrefHeight(640);
+        contentBox.setPadding(new Insets(20));
+        contentBox.setSpacing(12);
+        contentBox.setMaxHeight(640);
+        contentBox.setStyle("-fx-background-color: white; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.12), 3, 0, 1, 2)");
 
-        pageContent = contentBox;
+        HBox bigBox = new HBox(contentBox);
+        //bigBox.setMinHeight(768);
+        bigBox.setSpacing(12);
+        bigBox.setPadding(new Insets(12));
+        bigBox.setAlignment(Pos.CENTER);
+
+        pageContent = bigBox;
     }
 
     public String getTitle() {

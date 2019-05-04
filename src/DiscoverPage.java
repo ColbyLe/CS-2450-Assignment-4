@@ -21,47 +21,8 @@ public class DiscoverPage implements Page {
     }
 
     private Node buildDiscoverPage() {
-        Label[] categories = new Label[10];
-        categories[0] = new Label("Books");
-        categories[1] = new Label("eBooks");
-        categories[2] = new Label("Audiobooks");
-        categories[3] = new Label("Newspaper Articles");
-        categories[4] = new Label("Journal Articles");
-        categories[5] = new Label("VHS");
-        categories[6] = new Label("DVD");
-        categories[7] = new Label("Blu-ray");
-        categories[8] = new Label("Maps");
-        categories[9] = new Label("Gov't Documents");
-
-        VBox categoryBox = new VBox();
-        categoryBox.setPrefWidth(160);
-        categoryBox.setPrefHeight(1024);
-        categoryBox.setPadding(new Insets(48,8,8,8));
-        categoryBox.setSpacing(8);
-        categoryBox.setStyle("-fx-background-color: gray");
-        for(Label x:categories) {
-            x.setStyle("-fx-text-fill: white; -fx-font-size: 14");
-            categoryBox.getChildren().add(x);
-
-            x.setOnMouseClicked(e-> {
-                System.out.println("Clicked element: " + x.getText());
-                SearchPage cPage = new SearchPage(x.getText(), false);
-                pageContent = cPage.getContent();
-                pageTitle = x.getText();
-                hasChild = true;
-            });
-
-            x.setOnMouseEntered(e-> {
-                x.setStyle("-fx-underline: true; -fx-text-fill: white; -fx-font-size: 14");
-            });
-
-            x.setOnMouseExited(e-> {
-                x.setStyle("-fx-underline: false; -fx-text-fill: white; -fx-font-size: 14");
-            });
-        }
-
         Label header = new Label("What We're Reading");
-        header.setStyle("-fx-font-size: 20; -fx-font-weight: bold; -fx-font-family: Poppins");
+        header.setStyle("-fx-font-size: 20; -fx-font-weight: bold");
         header.setAlignment(Pos.CENTER);
 
         Image[] covers = new Image[4];
@@ -122,18 +83,21 @@ public class DiscoverPage implements Page {
         pageBox.setSpacing(20);
         pageBox.setAlignment(Pos.TOP_CENTER);
 
-        return new HBox(categoryBox, pageBox);
+        return new HBox(getCategoryBox(), pageBox);
     }
 
     private Node getItemBox() {
-        String category = "Book";
+        Label header = new Label("Staff Picks");
+        header.setStyle("-fx-font-size: 20; -fx-font-weight: bold");
+
+        String iType = "Book";
         Label[] resultTitles = new Label[4];
         Label[] resultType = new Label[4];
         Label[] resultInfo = new Label[4];
         Label[] resultSummary = new Label[4];
         VBox[] resultBox = new VBox[4];
 
-        ItemListing il1 = new ItemListing(category);
+        ItemListing il1 = new ItemListing(iType);
 
         for(int i=0; i<4; i++) {
             resultTitles[i] = new Label(il1.getTitle());
@@ -168,18 +132,67 @@ public class DiscoverPage implements Page {
 
             resultBox[i].setOnMouseClicked(e-> {
                 hasChild = true;
-                ItemListing il = new ItemListing(category);
+                ItemListing il = new ItemListing(iType);
                 ItemListingPage lp = new ItemListingPage(il, 0);
                 pageContent = lp.getContent();
                 pageTitle = lp.getTitle();
             });
         }
-        VBox itemBox = new VBox();
+        VBox itemBox = new VBox(header);
         itemBox.setSpacing(16);
         for(VBox x : resultBox) {
             itemBox.getChildren().add(x);
         }
         return itemBox;
+    }
+
+    private Node getCategoryBox() {
+        Label[] categories = new Label[10];
+        categories[0] = new Label("Books");
+        categories[1] = new Label("eBooks");
+        categories[2] = new Label("Audiobooks");
+        categories[3] = new Label("Newspaper Articles");
+        categories[4] = new Label("Journal Articles");
+        categories[5] = new Label("VHS");
+        categories[6] = new Label("DVD");
+        categories[7] = new Label("Blu-ray");
+        categories[8] = new Label("Maps");
+        categories[9] = new Label("Gov't Documents");
+
+        VBox categoryBox = new VBox();
+        categoryBox.setPrefWidth(160);
+        categoryBox.setPrefHeight(1024);
+        categoryBox.setPadding(new Insets(48,8,8,8));
+        categoryBox.setSpacing(8);
+        categoryBox.setStyle("-fx-background-color: gray");
+        for(Label x:categories) {
+            x.setStyle("-fx-text-fill: white; -fx-font-size: 14");
+            categoryBox.getChildren().add(x);
+
+            x.setOnMouseClicked(e-> {
+                System.out.println("Clicked element: " + x.getText());
+                SearchPage cPage = new SearchPage(x.getText(), false);
+                pageContent = cPage.getContent();
+                pageTitle = x.getText();
+                hasChild = true;
+            });
+
+            x.setOnMouseEntered(e-> {
+                x.setStyle("-fx-underline: true; -fx-text-fill: white; -fx-font-size: 14");
+            });
+
+            x.setOnMouseExited(e-> {
+                x.setStyle("-fx-underline: false; -fx-text-fill: white; -fx-font-size: 14");
+            });
+        }
+
+        return categoryBox;
+    }
+
+    private Node getEbooksPage() {
+        VBox[] iconBoxes = new VBox[4];
+
+        return new HBox(getCategoryBox());
     }
 
     @Override

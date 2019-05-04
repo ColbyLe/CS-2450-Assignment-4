@@ -163,7 +163,7 @@ public class PoconoMountainPL extends Application {
 
         // add pageBox to ScrollPane
         ScrollPane pagePane = new ScrollPane(pageBox);
-        pagePane.setPrefViewportHeight(768);
+        pagePane.setPrefViewportHeight(840);
         pagePane.setPrefViewportWidth(1024);
 
         // set primary scene and add stylesheet
@@ -183,5 +183,8 @@ public class PoconoMountainPL extends Application {
         primaryStage.setScene(primaryScene);
         primaryStage.setMaxWidth(1055);
         primaryStage.setTitle(p.getTitle());
+
+        Image icon = new Image("file:resources/images/pmpl.png");
+        primaryStage.getIcons().add(icon);
     }
 }
