@@ -43,7 +43,7 @@ public class HomePage implements Page{
         Image pmImg = new Image("file:resources/images/MP_overlook.jpg");
         ImageView pm = new ImageView(pmImg);
 
-        Label newsLabel = new Label("What's New at PMPL");
+        Label newsLabel = new Label("What's New");
         newsLabel.setStyle("-fx-font-size: 20; -fx-font-weight: bold");
         newsLabel.setPrefWidth(976);
         newsLabel.setAlignment(Pos.BASELINE_LEFT);

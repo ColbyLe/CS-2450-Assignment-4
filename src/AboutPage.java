@@ -1,6 +1,9 @@
 import javafx.geometry.Insets;
+import javafx.geometry.Pos;
 import javafx.scene.Node;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
@@ -40,29 +43,7 @@ public class AboutPage implements Page {
                 "The library follows bad weather closing & snow days based on Pocono Mt. School District. See www.pmsd.org for more information. \n" +
                 "You can also find the information on network TV news scroll, or via our facebook page. ");
 
-        Label moreInfo = new Label("Mission & Vision Statements \n" +
-                "\n" +
-                "Mission Statement\n" +
-                "Pocono Mountain Public Library strengthens the community by encouraging lifelong learning, stimulating intellectual curiosity, and promoting a literate and informed citizenry by providing a variety of information resources for all and enriching patrons’ lives through educational, cultural, and recreational programs.\n" +
-                "\n" +
-                "Vision Statement\n" +
-                "Pocono Mountain Public Library envisions the following for the future of the library:\n" +
-                "\n" +
-                "Promoting the library as a community focal point\n" +
-                "Maintaining an earnest focus on literacy\n" +
-                "Identifying & meeting the informational needs of a changing population\n" +
-                "Developing interesting & stimulating public programs\n" +
-                "Investing in the most current & innovative technologies\n" +
-                "Providing a skilled & knowledgeable staff\n" +
-                "\n" +
-                "Community Spaces\n" +
-                "The R. Dale & Frances Hughes Community Room is a large conference room on the second floor that can be booked for large or small group or business meetings, as well as private parties. The rooms all have power point screens, access to power point projector, tables, chairs, Wi-Fi, hard wire network access, and teleconferencing (with advance booking). Some fees do apply,and a contract for using the room must be executed. Please call the library for rules and scheduling information. 570-894-8860\n" +
-                "\n" +
-                "The Library also has a small tutoring and conference room on the second floor that can accomodate 6 people. This room has a table, computer and white board for small group instruction, tutoring, home school and charter school use, proctor tests and other educational needs. Please call with any questions and to book it. 570-894-8860. There are no fees for this room if it is used for educational purposes.\n" +
-                "\n" +
-                "Community Outreach\n" +
-                "The library director and other qualified library staff are available to come to your organization for library talks, library instruction, or other special library or literacy based events. Please contact the library director for more information. 570-894-8860\n" +
-                "\n" +
+        Label moreInfo = new Label(
                 "Board of Trustees\n" +
                 "Our dedicated, volunteer Board of Trustees are appointed from either Coolbaugh Township or Mount Pocono Borough, for three year appointments. People interested in serving on our board should contact a board officer or the library director. Board officers are expected to be involved in the community and assist with fundraising for the library.\n" +
                 "\n" +
@@ -78,17 +59,7 @@ public class AboutPage implements Page {
                 "\n" +
                 "Library Board meetings are open to the public on the first Wednesday of each month at 7:00 pm in the second floor conference room.\n" +
                 "\n" +
-                "Library Director\n" +
-                "Ann C. Shincovich, M.A., M.L.I.S.\n" +
-                "Library Staff\n" +
-                "Susanne: Children's Librarian \n" +
-                "Linda: Circulation Manager \n" +
-                "Lynn: Business Manager \n" +
-                "Stephanie: Main Desk & Customer Service \n" +
-                "Joe: Reference, Programs & Technology Librarian \n" +
-                "Linnae: Cataloging Librarian \n" +
-                "Mary Ann Lewis, YA Librarian (ALMC) \n" +
-                "\n" +
+
                 "Library Affiliations & Funding\n" +
                 "Pocono Mountain Public Library belongs to the Easton District Libraries, and is a member of the Associated Libraries of Monroe County. \n" +
                 "\n" +
@@ -165,10 +136,12 @@ public class AboutPage implements Page {
 
         categories[2].setOnMouseClicked(e-> {
             pageContent = swapStaffPage();
+            hasChild = true;
         });
 
         categories[3].setOnMouseClicked(e-> {
-            swapBoardPage();
+            pageContent = swapBoardPage();
+            hasChild = true;
         });
 
         return categoryBox;
@@ -176,6 +149,7 @@ public class AboutPage implements Page {
 
     public Node swapGeneralPage() {
         Label title = new Label ("About Us");
+        title.setStyle("-fx-font-size: 20; -fx-font-weight: bold");
         Label[] boxTitles = new Label[4];
         Text[] boxText = new Text[4];
 
@@ -190,12 +164,12 @@ public class AboutPage implements Page {
                 "and enriching patrons’ lives through educational, cultural, and recreational programs.");
 
         boxText[1] = new Text("Pocono Mountain Public Library envisions the following for the future of the library:\n" +
-                "Promoting the library as a community focal point\n" +
-                "Maintaining an earnest focus on literacy\n" +
-                "Identifying & meeting the informational needs of a changing population\n" +
-                "Developing interesting & stimulating public programs\n" +
-                "Investing in the most current & innovative technologies\n" +
-                "Providing a skilled & knowledgeable staff\n");
+                "\t1. Promoting the library as a community focal point\n" +
+                "\t2. Maintaining an earnest focus on literacy\n" +
+                "\t3. Identifying & meeting the informational needs of a changing population\n" +
+                "\t4. Developing interesting & stimulating public programs\n" +
+                "\t5. Investing in the most current & innovative technologies\n" +
+                "\t6. Providing a skilled & knowledgeable staff");
 
         boxText[2] = new Text("Pocono Mountain Public Library \n" +
                 "5500 Municipal Drive \n" +
@@ -211,14 +185,37 @@ public class AboutPage implements Page {
                 "Thursday: 10:00 am - 5:00 pm \n" +
                 "Friday: 12:00 pm - 4:00 pm \n" +
                 "Saturday: 12:00 pm - 4:00 pm \n" +
-                "Sunday: Closed\n");
+                "Sunday: Closed");
 
-        VBox textBox = new VBox(title);
+        VBox aboutBox = new VBox();
+        aboutBox.setPrefWidth(720);
+        aboutBox.setSpacing(32);
+        aboutBox.setPadding(new Insets(20));
+        aboutBox.setAlignment(Pos.CENTER);
+        aboutBox.setStyle("-fx-background-color: white; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.12), 3, 0, 1, 2)");
+
+
         for(int i=0; i<4; i++) {
-            boxText[i].setWrappingWidth(840);
-            textBox.getChildren().add(boxTitles[i]);
-            textBox.getChildren().add(boxText[i]);
+            boxTitles[i].setStyle("-fx-font-size: 16");
+            boxText[i].setWrappingWidth(640);
+            VBox iBox = new VBox(boxTitles[i],boxText[i]);
+            aboutBox.getChildren().add(iBox);
+            /*
+            aboutBox.getChildren().add(boxTitles[i]);
+            aboutBox.getChildren().add(boxText[i]);
+            */
         }
+
+        Image pmpl = new Image("file:resources/images/pocono.png");
+        ImageView pmplView = new ImageView(pmpl);
+        pmplView.setPreserveRatio(true);
+        pmplView.setFitWidth(320);
+        aboutBox.getChildren().add(pmplView);
+
+        VBox textBox = new VBox(title, aboutBox);
+        textBox.setAlignment(Pos.TOP_CENTER);
+        textBox.setPadding(new Insets(16,8,16,56));
+        textBox.setSpacing(20);
 
         HBox contentBox = new HBox(getCategoryBox(), textBox);
         pageTitle = "About Us";
@@ -227,6 +224,7 @@ public class AboutPage implements Page {
 
     public Node swapCommPage() {
         Label title = new Label("Community Services");
+        title.setStyle("-fx-font-size: 20; -fx-font-weight: bold");
         pageTitle = "Community Services";
         Label[] boxTitles = new Label[2];
         Text[] boxText = new Text[2];
@@ -244,24 +242,109 @@ public class AboutPage implements Page {
                 "library instruction, or other special library or literacy based events. " +
                 "Please contact the library director for more information.\n");
 
-        VBox textBox = new VBox(title);
+        VBox commBox = new VBox();
+        commBox.setStyle("-fx-background-color: white; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.12), 3, 0, 1, 2)");
+        commBox.setPrefWidth(720);
+        commBox.setSpacing(32);
+        commBox.setPadding(new Insets(20));
+        commBox.setAlignment(Pos.CENTER);
+        //textBox.setAlignment(Pos.CENTER);
+
         for(int i=0; i<2; i++) {
-            boxText[i].setWrappingWidth(840);
-            textBox.getChildren().add(boxTitles[i]);
-            textBox.getChildren().add(boxText[i]);
+            boxTitles[i].setStyle("-fx-font-size: 16");
+            boxText[i].setWrappingWidth(640);
+            VBox itemBox = new VBox(boxTitles[i], boxText[i]);
+            commBox.getChildren().add(itemBox);
         }
+
+        Image pmpl = new Image("file:resources/images/pmplComm.png");
+        ImageView pmplView = new ImageView(pmpl);
+        pmplView.setPreserveRatio(true);
+        pmplView.setFitWidth(320);
+        commBox.getChildren().add(pmplView);
+
+        VBox textBox = new VBox(title, commBox);
+        textBox.setAlignment(Pos.TOP_CENTER);
+        textBox.setSpacing(20);
+        textBox.setPadding(new Insets(16,8,16,56));
 
         pageTitle = "Community Services";
         return new HBox(getCategoryBox(), textBox);
     }
 
+    public Node swapBoardPage() {
+        Label title = new Label("Board of Trustees");
+        title.setStyle("-fx-font-size: 20; -fx-font-weight: bold");
+        Text spiel = new Text("\tOur dedicated, volunteer Board of Trustees are appointed from either " +
+                "Coolbaugh Township or Mount Pocono Borough, for three year appointments. " +
+                "People interested in serving on our board should contact a board officer or the library director. " +
+                "Board officers are expected to be involved in the community and assist with fundraising for the library.");
+        Text boardInfo = new Text("Library Board meetings are open to the public on the first Wednesday of each month at 7:00 pm in the second floor conference room.");
+        spiel.setWrappingWidth(640);
+        boardInfo.setWrappingWidth(640);
+
+        Label[] boardTitles = new Label[9];
+        Label[] boardNames = new Label[9];
+
+        boardTitles[0] = new Label("President:");
+        boardNames[0] = new Label("\tDanielle Rake");
+
+        boardTitles[1] = new Label("Vice President:");
+        boardNames[1] = new Label("\tSusan Miller");
+
+        boardTitles[2] = new Label("Treasurer:");
+        boardNames[2] = new Label("\tPhyllis Williams");
+
+        boardTitles[3] = new Label("Secretary:");
+        boardNames[3] = new Label("\tMary Mallard Barlieb");
+
+        boardTitles[4] = new Label("Member:");
+        boardNames[4] = new Label("\tJill Gunther");
+
+        boardTitles[5] = new Label("Member:");
+        boardNames[5] = new Label("\tJoyce Onsted");
+
+        boardTitles[6] = new Label("Member:");
+        boardNames[6] = new Label("\tStacy Stewart-Keeler");
+
+        boardTitles[7] = new Label("Member:");
+        boardNames[7] = new Label("\t[Vacant]");
+
+        boardTitles[8] = new Label("Member:");
+        boardNames[8] = new Label("\t[Vacant]");
+
+        VBox boardBox = new VBox(spiel);
+
+        for(int i=0; i<9; i++) {
+            boardTitles[i].setStyle("-fx-font-size: 16");
+            boardNames[i].setStyle("-fx-font-size: 14");
+            VBox iBox = new VBox(boardTitles[i], boardNames[i]);
+            boardBox.getChildren().add(iBox);
+        }
+        boardBox.getChildren().add(boardInfo);
+        boardBox.setStyle("-fx-background-color: white; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.12), 3, 0, 1, 2)");
+        boardBox.setPrefWidth(720);
+        boardBox.setSpacing(32);
+        boardBox.setPadding(new Insets(20));
+        boardBox.setAlignment(Pos.CENTER);
+
+
+        VBox textBox = new VBox(title, boardBox);
+        textBox.setSpacing(20);
+        textBox.setPadding(new Insets(16,8,16,56));
+        textBox.setAlignment(Pos.TOP_CENTER);
+        pageTitle = "Board of Trustees";
+        return new HBox(getCategoryBox(), textBox);
+    }
+
     public Node swapStaffPage() {
         Label title = new Label("Our Staff");
+        title.setStyle("-fx-font-size: 20; -fx-font-weight: bold");
         Label[] staffTitles = new Label[8];
         Label[] staffNames = new Label[8];
 
         staffTitles[0] = new Label("Library Director:");
-        staffNames[0] = new Label("\tAnn C. Shincovich, M.A., M.L.I.S.");
+        staffNames[0] = new Label("\tAnn C. Shincovich");
 
         staffTitles[1] = new Label("Circulation Manager:");
         staffNames[1] = new Label("\tLinda Davis");
@@ -284,21 +367,32 @@ public class AboutPage implements Page {
         staffTitles[7] = new Label("YA Librarian:");
         staffNames[7] = new Label("\tMary Ann Lewis");
 
-        VBox textBox = new VBox(title);
+        VBox staffBox = new VBox();
+        staffBox.setStyle("-fx-background-color: white; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.12), 3, 0, 1, 2)");
+        staffBox.setPrefWidth(720);
+        staffBox.setSpacing(32);
+        staffBox.setPadding(new Insets(20));
+        staffBox.setAlignment(Pos.CENTER);
 
         for(int i=0; i<8; i++) {
-            textBox.getChildren().add(staffTitles[i]);
-            textBox.getChildren().add(staffNames[i]);
+            staffTitles[i].setStyle("-fx-font-size: 16");
+            staffNames[i].setStyle("-fx-font-size: 14");
+            VBox staffItem = new VBox(staffTitles[i], staffNames[i]);
+            staffBox.getChildren().add(staffItem);
         }
 
+        Image pmpl = new Image("file:resources/images/pocono2.png");
+        ImageView pmplView = new ImageView(pmpl);
+        pmplView.setPreserveRatio(true);
+        pmplView.setFitWidth(320);
+        staffBox.getChildren().add(pmplView);
+
+        VBox textBox = new VBox(title, staffBox);
+        textBox.setAlignment(Pos.TOP_CENTER);
+        textBox.setSpacing(20);
+        textBox.setPadding(new Insets(16,8,16,56));
         pageTitle = "Our Staff";
-
-        return new HBox(getCategoryBox(), textBox);
-    }
-
-    public void swapBoardPage() {
-
-        pageTitle = "Board of Trustees";
+        return new HBox(getCategoryBox(),textBox);
     }
 
     public Node getContent() {
