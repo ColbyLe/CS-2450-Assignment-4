@@ -28,7 +28,7 @@ public class PoconoMountainPL extends Application {
     }
 
     private VBox getTopNav(Stage primaryStage) {
-        Image bannerImg = new Image("file:resources/images/banner.png");
+        Image bannerImg = new Image("file:resources/images/banner2.png");
         ImageView banner = new ImageView(bannerImg);
         banner.setOnMouseClicked(e-> {
             showPage(new HomePage(), primaryStage);
