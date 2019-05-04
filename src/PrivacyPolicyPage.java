@@ -24,12 +24,12 @@ public class PrivacyPolicyPage implements Page {
 
     public Node buildPPPage() {
         Label pp = new Label("Our Privacy Policy");
-        pp.setStyle("-fx-font-size: 24; -fx-font-weight: bold");
+        pp.setStyle("-fx-font-size: 20; -fx-font-weight: bold");
         Image zucc = new Image("file:resources/images/ZUCC.jpg");
         ImageView goZuckYourself = new ImageView(zucc);
         VBox stuff = new VBox(pp, goZuckYourself);
-        stuff.setPadding(new Insets(8,8,63,8));
-        //stuff.setPrefHeight(576);
+        stuff.setPadding(new Insets(16,8,40,8));
+        stuff.setSpacing(20);
         stuff.setAlignment(Pos.CENTER);
         return stuff;
     }
