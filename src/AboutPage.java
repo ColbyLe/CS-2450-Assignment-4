@@ -1,19 +1,22 @@
 import javafx.geometry.Insets;
-import javafx.geometry.Pos;
 import javafx.scene.Node;
 import javafx.scene.control.Label;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+import javafx.scene.text.Text;
 
 public class AboutPage implements Page {
 
     private Node pageContent;
     private String pageTitle;
+    private boolean hasChild;
 
     AboutPage() {
         pageContent = buildAboutpage();
         pageTitle = "About Us";
     }
 
+    /*
     private static VBox buildAboutpage() {
         Label info = new Label("PMPL HOURS OF OPERATION:\n" +
                 "Monday 10:00 am - 6:00 pm \n" +
@@ -118,10 +121,184 @@ public class AboutPage implements Page {
 
         return new VBox(infoBox);
     }
+    */
+
+    public Node buildAboutpage() {
+        return swapGeneralPage();
+    }
 
     public Node getCategoryBox() {
+        Label[] categories = new Label[4];
+        categories[0] = new Label("General");
+        categories[1] = new Label("Community Services");
+        categories[2] = new Label("Staff");
+        categories[3] = new Label("Board of Trustees");
 
-        return null;
+        VBox categoryBox = new VBox();
+        categoryBox.setPrefWidth(160);
+        categoryBox.setPrefHeight(1024);
+        categoryBox.setPadding(new Insets(48,8,8,8));
+        categoryBox.setSpacing(8);
+        categoryBox.setStyle("-fx-background-color: gray");
+        for(Label x:categories) {
+            x.setStyle("-fx-text-fill: white; -fx-font-size: 14");
+            categoryBox.getChildren().add(x);
+
+            x.setOnMouseEntered(e-> {
+                x.setStyle("-fx-underline: true; -fx-text-fill: white; -fx-font-size: 14");
+            });
+
+            x.setOnMouseExited(e-> {
+                x.setStyle("-fx-underline: false; -fx-text-fill: white; -fx-font-size: 14");
+            });
+        }
+
+        categories[0].setOnMouseClicked(e-> {
+            pageContent = swapGeneralPage();
+            hasChild = true;
+        });
+
+        categories[1].setOnMouseClicked(e-> {
+            pageContent = swapCommPage();
+            hasChild = true;
+        });
+
+        categories[2].setOnMouseClicked(e-> {
+            pageContent = swapStaffPage();
+        });
+
+        categories[3].setOnMouseClicked(e-> {
+            swapBoardPage();
+        });
+
+        return categoryBox;
+    }
+
+    public Node swapGeneralPage() {
+        Label title = new Label ("About Us");
+        Label[] boxTitles = new Label[4];
+        Text[] boxText = new Text[4];
+
+        boxTitles[0] = new Label("Mission Statement");
+        boxTitles[1] = new Label("Vision Statement");
+        boxTitles[2] = new Label("Location");
+        boxTitles[3] = new Label("Hours of Operation");
+
+        boxText[0] = new Text("Pocono Mountain Public Library strengthens the community by encouraging lifelong learning, " +
+                "stimulating intellectual curiosity, and promoting a literate and informed citizenry " +
+                "by providing a variety of information resources for all " +
+                "and enriching patrons’ lives through educational, cultural, and recreational programs.");
+
+        boxText[1] = new Text("Pocono Mountain Public Library envisions the following for the future of the library:\n" +
+                "Promoting the library as a community focal point\n" +
+                "Maintaining an earnest focus on literacy\n" +
+                "Identifying & meeting the informational needs of a changing population\n" +
+                "Developing interesting & stimulating public programs\n" +
+                "Investing in the most current & innovative technologies\n" +
+                "Providing a skilled & knowledgeable staff\n");
+
+        boxText[2] = new Text("Pocono Mountain Public Library \n" +
+                "5500 Municipal Drive \n" +
+                "Coolbaugh Township Municipal Center \n" +
+                "Tobyhanna, PA 18466 \n" +
+                "\n" +
+                "Phone: (570) 894-8860 \n" +
+                "Fax: (570) 894-8852");
+
+        boxText[3] = new Text("Monday: 10:00 am - 6:00 pm \n" +
+                "Tuesday: 10:00 am - 5:00 pm \n" +
+                "Wednesday: 12:00 pm - 8:00 pm \n" +
+                "Thursday: 10:00 am - 5:00 pm \n" +
+                "Friday: 12:00 pm - 4:00 pm \n" +
+                "Saturday: 12:00 pm - 4:00 pm \n" +
+                "Sunday: Closed\n");
+
+        VBox textBox = new VBox(title);
+        for(int i=0; i<4; i++) {
+            boxText[i].setWrappingWidth(840);
+            textBox.getChildren().add(boxTitles[i]);
+            textBox.getChildren().add(boxText[i]);
+        }
+
+        HBox contentBox = new HBox(getCategoryBox(), textBox);
+        pageTitle = "About Us";
+        return contentBox;
+    }
+
+    public Node swapCommPage() {
+        Label title = new Label("Community Services");
+        pageTitle = "Community Services";
+        Label[] boxTitles = new Label[2];
+        Text[] boxText = new Text[2];
+
+        boxTitles[0] = new Label("Community Spaces");
+        boxTitles[1] = new Label("Community Outreach");
+
+        boxText[0] = new Text("The R. Dale & Frances Hughes Community Room is a large conference room on the second floor " +
+                "that can be booked for large or small group or business meetings, " +
+                "as well as private parties. The rooms all have power point screens, " +
+                "access to power point projector, tables, chairs, Wi-Fi, hard wire network access, " +
+                "and teleconferencing (with advance booking). Some fees do apply,and a contract for using the room must be executed. " +
+                "Please call the library for rules and scheduling information.");
+        boxText[1] = new Text("The library director and other qualified library staff are available to come to your organization for library talks, " +
+                "library instruction, or other special library or literacy based events. " +
+                "Please contact the library director for more information.\n");
+
+        VBox textBox = new VBox(title);
+        for(int i=0; i<2; i++) {
+            boxText[i].setWrappingWidth(840);
+            textBox.getChildren().add(boxTitles[i]);
+            textBox.getChildren().add(boxText[i]);
+        }
+
+        pageTitle = "Community Services";
+        return new HBox(getCategoryBox(), textBox);
+    }
+
+    public Node swapStaffPage() {
+        Label title = new Label("Our Staff");
+        Label[] staffTitles = new Label[8];
+        Label[] staffNames = new Label[8];
+
+        staffTitles[0] = new Label("Library Director:");
+        staffNames[0] = new Label("\tAnn C. Shincovich, M.A., M.L.I.S.");
+
+        staffTitles[1] = new Label("Circulation Manager:");
+        staffNames[1] = new Label("\tLinda Davis");
+
+        staffTitles[2] = new Label("Business Manager:");
+        staffNames[2] = new Label("\tLynn Wesley");
+
+        staffTitles[3] = new Label("Customer Service:");
+        staffNames[3] = new Label("\tStephanie Moore");
+
+        staffTitles[4] = new Label("Cataloging Librarian:");
+        staffNames[4] = new Label("\tLinnae Allen");
+
+        staffTitles[5] = new Label("Reference, Programs, and Technology Librarian:");
+        staffNames[5] = new Label("\tJoe Nelson");
+
+        staffTitles[6] = new Label("Childrens' Librarian:");
+        staffNames[6] = new Label("\tSusanne Doe");
+
+        staffTitles[7] = new Label("YA Librarian:");
+        staffNames[7] = new Label("\tMary Ann Lewis");
+
+        VBox textBox = new VBox(title);
+
+        for(int i=0; i<8; i++) {
+            textBox.getChildren().add(staffTitles[i]);
+            textBox.getChildren().add(staffNames[i]);
+        }
+
+        pageTitle = "Our Staff";
+
+        return new HBox(getCategoryBox(), textBox);
+    }
+
+    public void swapBoardPage() {
+
+        pageTitle = "Board of Trustees";
     }
 
     public Node getContent() {
@@ -134,6 +311,6 @@ public class AboutPage implements Page {
     }
 
     public boolean spawnsChildPage() {
-        return false;
+        return hasChild;
     }
 }
