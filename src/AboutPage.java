@@ -321,6 +321,7 @@ public class AboutPage implements Page {
             VBox iBox = new VBox(boardTitles[i], boardNames[i]);
             boardBox.getChildren().add(iBox);
         }
+
         boardBox.getChildren().add(boardInfo);
         boardBox.setStyle("-fx-background-color: white; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.12), 3, 0, 1, 2)");
         boardBox.setPrefWidth(720);
