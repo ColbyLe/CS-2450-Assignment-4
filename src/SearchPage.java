@@ -88,7 +88,7 @@ public class SearchPage implements Page {
         }
 
         VBox searchContent = new VBox(searchLabel);
-        searchContent.setPadding(new Insets(8,16,32,16));
+        searchContent.setPadding(new Insets(16,16,32,16));
         searchContent.setSpacing(32);
         searchContent.setAlignment(Pos.CENTER);
 
