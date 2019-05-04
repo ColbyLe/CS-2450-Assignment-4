@@ -28,7 +28,7 @@ public class PrivacyPolicyPage implements Page {
         Image zucc = new Image("file:resources/images/ZUCC.jpg");
         ImageView goZuckYourself = new ImageView(zucc);
         VBox stuff = new VBox(pp, goZuckYourself);
-        stuff.setPadding(new Insets(8));
+        stuff.setPadding(new Insets(8,8,63,8));
         //stuff.setPrefHeight(576);
         stuff.setAlignment(Pos.CENTER);
         return stuff;
