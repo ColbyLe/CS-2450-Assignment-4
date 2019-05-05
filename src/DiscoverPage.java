@@ -148,17 +148,18 @@ public class DiscoverPage implements Page {
     }
 
     private Node getCategoryBox() {
-        Label[] categories = new Label[10];
-        categories[0] = new Label("Books");
-        categories[1] = new Label("eBooks");
-        categories[2] = new Label("Audiobooks");
-        categories[3] = new Label("Newspaper Articles");
-        categories[4] = new Label("Journal Articles");
-        categories[5] = new Label("VHS");
-        categories[6] = new Label("DVD");
-        categories[7] = new Label("Blu-ray");
-        categories[8] = new Label("Maps");
-        categories[9] = new Label("Gov't Documents");
+        Label[] categories = new Label[11];
+        categories[0] = new Label("Discover");
+        categories[1] = new Label("Books");
+        categories[2] = new Label("eBooks");
+        categories[3] = new Label("Audiobooks");
+        categories[4] = new Label("Newspaper Articles");
+        categories[5] = new Label("Journal Articles");
+        categories[6] = new Label("VHS");
+        categories[7] = new Label("DVD");
+        categories[8] = new Label("Blu-ray");
+        categories[9] = new Label("Maps");
+        categories[10] = new Label("Gov't Documents");
 
         VBox categoryBox = new VBox();
         categoryBox.setPrefWidth(160);
@@ -172,8 +173,7 @@ public class DiscoverPage implements Page {
 
             x.setOnMouseClicked(e-> {
                 System.out.println("Clicked element: " + x.getText());
-                SearchPage cPage = new SearchPage(x.getText(), false);
-                pageContent = cPage.getContent();
+                pageContent = getListPage(x.getText());
                 pageTitle = x.getText();
                 hasChild = true;
             });
@@ -187,14 +187,81 @@ public class DiscoverPage implements Page {
             });
         }
 
-        categories[1].setOnMouseClicked(e-> {
+        categories[2].setOnMouseClicked(e-> {
             System.out.println("Clicked element: " + categories[1].getText());
             pageContent = getEbooksPage();
             pageTitle = "eBooks";
             hasChild = true;
         });
 
+        categories[0].setOnMouseClicked(e-> {
+            pageContent = buildDiscoverPage();
+        });
+
         return categoryBox;
+    }
+
+    private Node getListPage(String category) {
+        Label searchLabel = new Label(category);
+        Label[] resultTitles = new Label[5];
+        Label[] resultType = new Label[5];
+        Label[] resultInfo = new Label[5];
+        Label[] resultSummary = new Label[5];
+        VBox[] resultBox = new VBox[5];
+
+        searchLabel.setStyle("-fx-font-size: 20; -fx-font-weight: bold");
+        ItemListing il1 = new ItemListing(category);
+
+        for(int i=0; i<5; i++) {
+            resultTitles[i] = new Label(il1.getTitle());
+            resultType[i] = new Label(il1.getType());
+            resultInfo[i] = new Label(il1.getInfo());
+            resultSummary[i] = new Label(il1.getSummary());
+
+            resultTitles[i].setWrapText(true);
+            resultInfo[i].setWrapText(true);
+            resultSummary[i].setWrapText(true);
+
+            resultTitles[i].setStyle("-fx-font-size: 16px");
+
+            resultBox[i] = new VBox(resultTitles[i], resultType[i], resultInfo[i], resultSummary[i]);
+            resultBox[i].setPadding(new Insets(8,8,8,8));
+            resultBox[i].setStyle("-fx-background-color: white; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.12), 3, 0, 1, 2)");
+            /*
+            resultBox[i].setOnMouseClicked(e-> {
+                pStage.setScene(buildListingScene(pStage, topNav, bottomNav));
+            });
+            */
+
+            int finalI = i;
+
+            resultBox[i].setOnMouseEntered(e-> {
+                resultBox[finalI].setStyle("-fx-background-color: white; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.25), 3, 0, 2, 4)");
+            });
+
+            resultBox[i].setOnMouseExited(e-> {
+                resultBox[finalI].setStyle("-fx-background-color: white; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.12), 3, 0, 1, 2)");
+            });
+
+            resultBox[i].setOnMouseClicked(e-> {
+                hasChild = true;
+                ItemListing il = new ItemListing(category);
+                ItemListingPage lp = new ItemListingPage(il, 0);
+                pageContent = lp.getContent();
+                pageTitle = lp.getTitle();
+            });
+        }
+
+        VBox searchContent = new VBox(searchLabel);
+        searchContent.setPadding(new Insets(16,16,32,16));
+        searchContent.setSpacing(32);
+        searchContent.setAlignment(Pos.CENTER);
+
+        for(VBox x : resultBox) {
+            searchContent.getChildren().add(x);
+        }
+
+        return new HBox(getCategoryBox(), searchContent);
     }
 
     private Node getEbooksPage() {

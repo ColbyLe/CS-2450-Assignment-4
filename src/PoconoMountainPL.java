@@ -57,13 +57,6 @@ public class PoconoMountainPL extends Application {
         // dummy event handler
         navB[1].setOnAction(e-> {
             showPage(new DiscoverPage(), primaryStage);
-
-            /*
-            VBox blank1 = new VBox();
-            VBox pageBox = new VBox(getTopNav(primaryStage), blank1, getBottomNav(primaryStage));
-            primaryScene = new Scene(pageBox);
-            primaryStage.setScene(primaryScene);
-            */
         });
 
         navB[2] = new Button("Events");
@@ -104,7 +97,7 @@ public class PoconoMountainPL extends Application {
     private HBox getBottomNav(Stage primaryStage) {
         Hyperlink navLink = new Hyperlink("Privacy Policy");
         //navLink[0] = new Hyperlink("About Us");
-        navLink.setStyle("-fx-text-fill: rgb(0,121,121)");
+        navLink.setStyle("-fx-text-fill: rgb(255,255,255)");
 
         navLink.setOnAction(e-> {
             PrivacyPolicyPage ppp = new PrivacyPolicyPage();
@@ -115,7 +108,7 @@ public class PoconoMountainPL extends Application {
         botNav.setPrefHeight(64);
         botNav.setPadding(new Insets(8,8,8,8));
         botNav.setAlignment(Pos.CENTER_RIGHT);
-        botNav.setStyle("-fx-background-color: rgb(0,121,121);");
+        botNav.setStyle("-fx-font-size: 14; -fx-background-color: rgb(0,121,121);");
         return botNav;
     }
 
