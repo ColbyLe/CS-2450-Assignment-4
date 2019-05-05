@@ -112,32 +112,7 @@ public class PoconoMountainPL extends Application {
         return botNav;
     }
 
-
-    /*
-    private HBox getSortBar() {
-        ComboBox typeBox = new ComboBox();
-        typeBox.getItems().addAll("All Types", "Book", "Journal", "Audiobook", "eBook", "VHS", "DVD", "Blu-Ray");
-
-        Label typeLabel = new Label("Type");
-        return new HBox(typeLabel, typeBox);
-    }
-    */
-
     private void showPage(Page p, Stage primaryStage) {
-        // get page content, then place in VBox between top nav bar and bottom nav bar
-
-        // on search, pass text of searchBar to activePage
-
-        /*
-        Node extra;
-        if(p.getClass().equals("class SearchPage")) {
-            extra = getSortBar();
-        }
-        else {
-            extra = new HBox();
-        }
-        */
-
         pageContent = p.getContent();
         pageContent.setOnMouseClicked(e-> {
             // System.out.println("Mouse clicked");
