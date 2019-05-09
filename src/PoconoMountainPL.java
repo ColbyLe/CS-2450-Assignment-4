@@ -145,6 +145,18 @@ public class PoconoMountainPL extends Application {
                     showPage(new SearchPage(searchBar.getText(), true), primaryStage);
                 }
             }
+            if(e.getCode() == KeyCode.DIGIT4) {
+                showPage(new HomePage(), primaryStage);
+            }
+            if(e.getCode() == KeyCode.DIGIT1) {
+                showPage(new DiscoverPage(), primaryStage);
+            }
+            if(e.getCode() == KeyCode.DIGIT2) {
+                showPage(new EventPage(), primaryStage);
+            }
+            if(e.getCode() == KeyCode.DIGIT3) {
+                showPage(new AboutPage(), primaryStage);
+            }
         });
 
         // set primary stage
